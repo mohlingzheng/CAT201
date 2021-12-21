@@ -17,7 +17,11 @@ public class Main {
         window.setLocationRelativeTo(null);
         window.setVisible(true);//This is a comment
 
+<<<<<<< HEAD
         gamePanel.startGameThread();//This is a comment
+=======
+        gamePanel.startGameThread(); // new comment
+>>>>>>> a0bc3e07fa91d0da49378742cca4c99951c44482
 
     }
 }
