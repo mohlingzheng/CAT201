@@ -14,7 +14,7 @@ public class Main {
 
         window.pack(); // Set window to be sized to fit the preferred size
 
-        window.setLocationRelativeTo(null); //This is comment
+        window.setLocationRelativeTo(null);
         window.setVisible(true);
 
         gamePanel.startGameThread();
