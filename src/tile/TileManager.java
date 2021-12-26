@@ -22,21 +22,44 @@ public class TileManager {
 
         this.gp = gp;
 
-        tile = new Tile[10];
+        tile = new Tile[100];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/maps/world01.txt");
+        loadMap("/maps/map02.txt");
     }
 
     public void getTileImage(){
 
-        setup(0, "grass", false);
-        setup(1, "wall", true);
-        setup(2, "water", true);
-        setup(3, "earth", false);
-        setup(4, "tree", true);
-        setup(5, "sand", false);
+        setup(0, "cave", false);
+        setup(1, "cave", false);
+        setup(2, "cave", false);
+        setup(3, "cave", false);
+        setup(4, "cave", false);
+        setup(5, "cave", false);
+        setup(6, "cave", false);
+        setup(7, "cave", false);
+        setup(8, "cave", false);
+        setup(9, "cave", false);
+
+        setup(10, "cave", true);
+        setup(11, "earth_1", false);
+        setup(12, "earth_2", false);
+        setup(13, "earth_3", false);
+        setup(14, "earth_4", false);
+        setup(15, "fence_1", true);
+        setup(16, "fence_2", true);
+        setup(17, "grass_1", false);
+        setup(18, "grass_2", false);
+        setup(19, "grass_3", false);
+        setup(20, "water_1", true);
+        setup(21, "water_2", true);
+        setup(22, "water_3", true);
+        setup(23, "water_4", true);
+        setup(24, "water_5", true);
+        setup(25, "water_6", true);
+        setup(26, "water_7", true);
+        setup(27, "tree_1", true);
     }
 
     public void setup(int index, String imageName, boolean collision){

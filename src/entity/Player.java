@@ -37,8 +37,8 @@ public class Player extends Entity{
     }
     public void setDefaultValues(){
 
-        worldX = gp.tileSize * 23;
-        worldY = gp.tileSize * 21;
+        worldX = gp.tileSize * 70;
+        worldY = gp.tileSize * 40;
         speed = 8;
         direction = "down";
 
@@ -48,14 +48,14 @@ public class Player extends Entity{
     }
     public void getPlayerImage(){
 
-        up1 = setup("/player/boy_up_1");
-        up2 = setup("/player/boy_up_2");
-        down1 = setup("/player/boy_down_1");
-        down2 = setup("/player/boy_down_2");
-        left1 = setup("/player/boy_left_1");
-        left2 = setup("/player/boy_left_2");
-        right1 = setup("/player/boy_right_1");
-        right2 = setup("/player/boy_right_2");
+        up1 = setup("/player/player_up_1");
+        up2 = setup("/player/player_up_2");
+        down1 = setup("/player/player_down_1");
+        down2 = setup("/player/player_down_2");
+        left1 = setup("/player/player_left_1");
+        left2 = setup("/player/player_left_2");
+        right1 = setup("/player/player_right_1");
+        right2 = setup("/player/player_right_2");
 
     }
     public void update(){

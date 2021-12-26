@@ -65,15 +65,15 @@ public class KeyHandler implements KeyListener {
                 if(code == KeyEvent.VK_ENTER){
                     if(gp.ui.commmandNum == 0){
                         gp.gameState = gp.playState;
-                        gp.playMusic(0);
+                        //gp.playMusic(0);
                     }
                     if(gp.ui.commmandNum == 1){
                         gp.gameState = gp.playState;
-                        gp.playMusic(0);
+                        //gp.playMusic(0);
                     }
                     if(gp.ui.commmandNum == 2){
                         gp.gameState = gp.playState;
-                        gp.playMusic(0);
+                        //gp.playMusic(0);
                     }
                     if(gp.ui.commmandNum == 3){
                         gp.ui.titleScreenState = 0;

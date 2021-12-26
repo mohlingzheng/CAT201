@@ -45,15 +45,15 @@ public class EventHandler {
         }
 
         if(canTouchEvent == true){
-            if(hit(26, 16, "right") == true){
-                damagePit(26, 16, gp.dialogState);
-            }
-            if(hit(23, 7, "up") == true){
-                healingPool(23, 7, gp.dialogState);
-            }
-            if(hit(20, 16, "left") == true){
-                teleport(20, 16, gp.dialogState);
-            }
+//            if(hit(26, 16, "right") == true){
+//                damagePit(26, 16, gp.dialogState);
+//            }
+//            if(hit(23, 7, "up") == true){
+//                healingPool(23, 7, gp.dialogState);
+//            }
+//            if(hit(20, 16, "left") == true){
+//                teleport(20, 16, gp.dialogState);
+//            }
         }
 
     }

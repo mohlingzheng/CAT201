@@ -13,18 +13,19 @@ import java.util.Comparator;
 public class GamePanel extends JPanel implements Runnable{
 
     // Screen Settings
-    final int originalTileSize = 16; //16x16 tile
-    final int scale = 3;
+    final int originalTileSize = 32; //16x16 tile
+    final int scaleUp = 3;
+    final int scaleDown = 2;
 
-    public final int tileSize = originalTileSize * scale; //48x48 tile
+    public final int tileSize = originalTileSize * scaleUp / scaleDown; //48x48 tile
     public final int maxScreenCol = 15;
     public final int maxScreenRow = 12;
     public final int screenWidth = tileSize * maxScreenCol; // 768 pixels
     public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 
     // WORLD SETTINGS
-    public final int maxWorldCol = 50;
-    public final int maxWorldRow = 50;
+    public final int maxWorldCol = 190;
+    public final int maxWorldRow = 140;
     public final int worldWidth = tileSize * maxWorldCol;
     public final int worldHeight = tileSize * maxWorldRow;
 
