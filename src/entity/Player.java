@@ -214,8 +214,8 @@ public class Player extends Entity{
         g2.drawImage(image, x, y,null);
 
         // SHOW COLLISION RECTANGLE
-        //g2.setColor(Color.red);
-        //g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+        g2.setColor(Color.red);
+        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
 
 
     }
