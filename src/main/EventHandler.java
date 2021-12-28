@@ -1,6 +1,6 @@
 package main;
 
-import java.awt.*;
+import object.OBJ_Door;
 
 public class EventHandler {
 
@@ -9,6 +9,8 @@ public class EventHandler {
 
     int previousEventX, previousEventY;
     boolean canTouchEvent = true;
+    public boolean slipperyEvent = false;
+    public boolean[] doorCondition = new boolean[5];
 
     public EventHandler(GamePanel gp){
 
@@ -32,6 +34,9 @@ public class EventHandler {
                 col = 0;
             }
         }
+        for(int i = 0; i < 5; i++){
+            doorCondition[i] = false;
+        }
     }
 
     public void checkEvent(){
@@ -45,12 +50,10 @@ public class EventHandler {
         }
 
         if(canTouchEvent == true){
-            if(hit(55, 44, "any") == true){
-                enterCave(55, 44, gp.transitionState);
-            }
-            if(hit(19, 32, "any") == true){
-                enterCave(19, 32, gp.transitionState);
-            }
+            enterExitCave(gp.transitionState);
+            //checkSlipperyTile();
+            //checkNonSlipperyTile();
+            buttonTrigger(gp.dialogState);
         }
     }
     public boolean hit(int col, int row, String reqDirection){
@@ -78,34 +81,106 @@ public class EventHandler {
         return hit;
     }
 
-    public void damagePit(int col, int row, int gameState){
-
-        gp.gameState = gameState;
-        gp.ui.currentDialogue = "You fall into a pit!";
-        gp.player.life -= 1;
-        //eventRect[col][row].eventDone = true;
-        canTouchEvent = false;
-    }
-    public void healingPool(int col, int row, int gameState){
-
-        if(gp.keyH.enterPressed == true){
+    public void enterExitCave(int gameState){
+        if(hit(55, 44, "any") == true){
             gp.gameState = gameState;
-            gp.ui.currentDialogue = "You drink the water.\nYour life has been recovered.";
-            gp.player.life = gp.player.maxLife;
-        }
-    }
-    public void enterCave(int col, int row, int gameState){
-        gp.gameState = gameState;
-        if(col == 55 && row == 44){
             gp.ui.currentDialogue = "You enter the cave!";
             gp.player.worldX = gp.tileSize * 19;
             gp.player.worldY = gp.tileSize * 31;
         }
-        else if(col == 19 && row == 32){
+        if(hit(19, 32, "any") == true){
+            gp.gameState = gameState;
             gp.ui.currentDialogue = "You leave the cave!";
             gp.player.worldX = gp.tileSize * 55;
             gp.player.worldY = gp.tileSize * 46;
         }
+    }
 
+    public void checkSlipperyTile(){
+        for(int row = 18; row < 28; row++){
+            for(int col = 24; col < 38; col++){
+                // Need to change mapTileNum accordingly
+                if(hit(col, row, "any") && gp.tileM.mapTileNum[col][row] == 13){
+                    slipperyEvent = true;
+                    canTouchEvent = true;
+                }
+            }
+        }
+    }
+
+    public void checkNonSlipperyTile(){
+        if(hit(25, 27, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(26, 25, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(27, 25, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(27, 24, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(28, 24, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(29, 21, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(34, 23, "any") == true){
+            slipperyEvent = false;
+        }
+        else if(hit(35, 23, "any") == true){
+            slipperyEvent = false;
+        }
+    }
+
+    public void buttonTrigger(int gameState){
+        int col = 45, row = 22;
+        if(hit(col, row, "any") == true){
+            doorSwitch(col, row, gameState);
+        }
+        col = 50; row = 26;
+        if(hit(col, row, "any") == true){
+            doorSwitch(col, row, gameState);
+        }
+        col = 49; row = 32;
+        if(hit(col, row, "any") == true){
+            doorSwitch(col, row, gameState);
+        }
+        col = 53; row = 22;
+        if(hit(col, row, "any") == true){
+            doorSwitch(col, row, gameState);
+        }
+    }
+
+    public void doorSwitch(int col, int row, int gameState){
+        if(gp.keyH.enterPressed == true){
+            int door1 = 0, door2 = 0;
+            int doorCol1 = 0, doorRow1 = 0;
+            int doorCol2 = 0, doorRow2 = 0;
+            if(col == 45 && row == 22){
+                door1 = 0; doorCol1 = 47; doorRow1 = 27;
+                door2 = 4; doorCol2 = 47; doorRow2 = 31;
+            }
+            else if(col == 50 && row == 26){
+                door1 = 2; doorCol1 = 52; doorRow1 = 29;
+                door2 = 4; doorCol2 = 47; doorRow2 = 31;
+            }
+            else if(col == 49 && row == 32){
+                door1 = 0; doorCol1 = 47; doorRow1 = 27;
+                door2 = 1; doorCol2 = 49; doorRow2 = 25;
+            }
+            else if(col == 53 && row == 22){
+                door1 = 2; doorCol1 = 52; doorRow1 = 29;
+                door2 = 3; doorCol2 = 52; doorRow2 = 29;
+            }
+            gp.aSetter.createDoor(door1, doorCol1, doorRow1, doorCondition[door1]);
+            gp.aSetter.createDoor(door2, doorCol2, doorRow2, doorCondition[door2]);
+            doorCondition[door1] = !doorCondition[door1];
+            doorCondition[door2] = !doorCondition[door2];
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "Two doors have been modified.";
+        }
     }
 }

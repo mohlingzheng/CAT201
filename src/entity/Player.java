@@ -60,75 +60,131 @@ public class Player extends Entity{
     }
     public void update(){
 
-        if(keyH.upPressed == true || keyH.downPressed == true
+        // If player is on slippery ground
+        if(gp.eHandler.slipperyEvent == true){
+            slipperyUpdate();
+        }
+        // Player is moving normally
+        else if(keyH.upPressed == true || keyH.downPressed == true
                 || keyH.leftPressed == true || keyH.rightPressed == true){
+            normalUpdate();
+        }
+        // Player is standing still
+        else{
+            standUpdate();
+        }
+    }
 
-            if(keyH.upPressed == true){
-                direction = "up";
-            }
-            else if(keyH.downPressed == true){
-                direction = "down";
-            }
-            else if(keyH.leftPressed == true){
-                direction = "left";
-            }
-            else if(keyH.rightPressed == true){
-                direction = "right";
-            }
+    public void normalUpdate(){
 
-            // CHECK TILE COLLISION
-            collisionOn = false;
-            gp.cChecker.checkTile(this);
+        if(keyH.upPressed == true){
+            direction = "up";
+        }
+        else if(keyH.downPressed == true){
+            direction = "down";
+        }
+        else if(keyH.leftPressed == true){
+            direction = "left";
+        }
+        else if(keyH.rightPressed == true){
+            direction = "right";
+        }
 
-            // CHECK OBJECT COLLISION
-            int objIndex = gp.cChecker.checkObject(this, true);
-            pickUpObject(objIndex);
+        // CHECK TILE COLLISION
+        collisionOn = false;
+        gp.cChecker.checkTile(this);
 
-            // CHECK NPC COLLISION
-            int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
-            interactNPC(npcIndex);
+        // CHECK OBJECT COLLISION
+        int objIndex = gp.cChecker.checkObject(this, true);
+        pickUpObject(objIndex);
 
-            // CHECK EVENT
-            gp.eHandler.checkEvent();
+        // CHECK NPC COLLISION
+        int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
+        interactNPC(npcIndex);
 
-            gp.keyH.enterPressed = false;
+        // CHECK EVENT
+        gp.eHandler.checkEvent();
 
-            // IF COLLISION IS FALSE, PLAYER CAN MOVE
-            if(collisionOn == false){
+        gp.keyH.enterPressed = false;
 
-                switch (direction){
-                    case "up":
-                        worldY -= speed;
-                        break;
-                    case "down":
-                        worldY += speed;
-                        break;
-                    case "left":
-                        worldX -= speed;
-                        break;
-                    case "right":
-                        worldX += speed;
-                        break;
-                }
-            }
+        // IF COLLISION IS FALSE, PLAYER CAN MOVE
+        if(collisionOn == false){
 
-            spriteCounter++;
-            if(spriteCounter > 12){
-                if(spriteNum == 1){
-                    spriteNum = 2;
-                }
-                else if(spriteNum == 2){
-                    spriteNum = 1;
-                }
-                spriteCounter = 0;
+            switch (direction){
+                case "up":
+                    worldY -= speed;
+                    break;
+                case "down":
+                    worldY += speed;
+                    break;
+                case "left":
+                    worldX -= speed;
+                    break;
+                case "right":
+                    worldX += speed;
+                    break;
             }
         }
-        else{
-            standCounter++;
 
-            if(standCounter == 20){
+        spriteCounter++;
+        if(spriteCounter > 12){
+            if(spriteNum == 1){
+                spriteNum = 2;
+            }
+            else if(spriteNum == 2){
                 spriteNum = 1;
-                standCounter = 0;
+            }
+            spriteCounter = 0;
+        }
+    }
+
+    public void standUpdate(){
+        standCounter++;
+
+        if(standCounter == 20){
+            spriteNum = 1;
+            standCounter = 0;
+        }
+    }
+
+    public void slipperyUpdate(){
+        // CHECK TILE COLLISION
+        collisionOn = false;
+        gp.cChecker.checkTile(this);
+
+        // CHECK OBJECT COLLISION
+        int objIndex = gp.cChecker.checkObject(this, true);
+        pickUpObject(objIndex);
+
+        // CHECK NPC COLLISION
+        int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
+        interactNPC(npcIndex);
+
+        // CHECK EVENT
+        gp.eHandler.checkEvent();
+
+        gp.keyH.enterPressed = false;
+
+        if(collisionOn == true){
+            gp.eHandler.slipperyEvent = false;
+        }
+
+        // IF COLLISION IS FALSE, PLAYER CAN MOVE
+        if(collisionOn == false){
+
+            switch (direction){
+                case "up":
+                    worldY -= speed;
+                    break;
+                case "down":
+                    worldY += speed;
+                    break;
+                case "left":
+                    worldX -= speed;
+                    break;
+                case "right":
+                    worldX += speed;
+                    break;
             }
         }
     }
