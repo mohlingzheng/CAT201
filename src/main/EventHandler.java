@@ -45,17 +45,13 @@ public class EventHandler {
         }
 
         if(canTouchEvent == true){
-//            if(hit(26, 16, "right") == true){
-//                damagePit(26, 16, gp.dialogState);
-//            }
-//            if(hit(23, 7, "up") == true){
-//                healingPool(23, 7, gp.dialogState);
-//            }
-//            if(hit(20, 16, "left") == true){
-//                teleport(20, 16, gp.dialogState);
-//            }
+            if(hit(55, 44, "any") == true){
+                enterCave(55, 44, gp.transitionState);
+            }
+            if(hit(19, 32, "any") == true){
+                enterCave(19, 32, gp.transitionState);
+            }
         }
-
     }
     public boolean hit(int col, int row, String reqDirection){
         boolean hit = false;
@@ -98,10 +94,18 @@ public class EventHandler {
             gp.player.life = gp.player.maxLife;
         }
     }
-    public void teleport(int col, int row, int gameState){
+    public void enterCave(int col, int row, int gameState){
         gp.gameState = gameState;
-        gp.ui.currentDialogue = "You walk into a portal!";
-        gp.player.worldX = gp.tileSize * 23;
-        gp.player.worldY = gp.tileSize * 21;
+        if(col == 55 && row == 44){
+            gp.ui.currentDialogue = "You enter the cave!";
+            gp.player.worldX = gp.tileSize * 19;
+            gp.player.worldY = gp.tileSize * 31;
+        }
+        else if(col == 19 && row == 32){
+            gp.ui.currentDialogue = "You leave the cave!";
+            gp.player.worldX = gp.tileSize * 55;
+            gp.player.worldY = gp.tileSize * 46;
+        }
+
     }
 }

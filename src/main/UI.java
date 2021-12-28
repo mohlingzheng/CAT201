@@ -69,6 +69,10 @@ public class UI {
             drawPlyaerLife();
             drawDialogScreen();
         }
+        // TRANSITION STATE
+        if(gp.gameState == gp.transitionState){
+            drawTransitionWindow();
+        }
     }
     public void drawPlyaerLife(){
         int x = gp.tileSize/2;
@@ -237,6 +241,18 @@ public class UI {
         g2.setColor(c);
         g2.setStroke(new BasicStroke(5));
         g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
+    }
+
+    public void drawTransitionWindow(){
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 28F));
+        int length = (int)g2.getFontMetrics().getStringBounds(currentDialogue, g2).getWidth();
+        int x = gp.screenWidth/2 - length/2;
+        int y = gp.screenHeight/2;
+        g2.drawString(currentDialogue,x ,y);
     }
 
     public int getXforCenteredText(String text){

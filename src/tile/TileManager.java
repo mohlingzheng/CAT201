@@ -1,12 +1,10 @@
 package tile;
 
-import jdk.jshell.execution.Util;
 import main.GamePanel;
 import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +24,7 @@ public class TileManager {
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/maps/map02.txt");
+        loadMap("/maps/MapsV01.txt");
     }
 
     public void getTileImage(){
@@ -47,19 +45,23 @@ public class TileManager {
         setup(12, "earth_2", false);
         setup(13, "earth_3", false);
         setup(14, "earth_4", false);
-        setup(15, "fence_1", true);
-        setup(16, "fence_2", true);
-        setup(17, "grass_1", false);
-        setup(18, "grass_2", false);
-        setup(19, "grass_3", false);
-        setup(20, "water_1", true);
-        setup(21, "water_2", true);
-        setup(22, "water_3", true);
-        setup(23, "water_4", true);
-        setup(24, "water_5", true);
-        setup(25, "water_6", true);
-        setup(26, "water_7", true);
-        setup(27, "tree_1", true);
+        setup(15, "fence_grass_1", true);
+        setup(16, "fence_grass_2", true);
+        setup(17, "fence_grass_3", true);
+        setup(18, "grass_1", false);
+        setup(19, "grass_2", false);
+        setup(20, "grass_3", false);
+        setup(21, "tree_grass_1", true);
+        setup(22, "tree_grass_2", true);
+        setup(23, "tree_grass_3", true);
+        setup(24, "wall", true);
+        setup(25, "water_1", true);
+        setup(26, "water_2", true);
+        setup(27, "water_3", true);
+        setup(28, "side_grass_1", true);
+        setup(29, "side_grass_2", true);
+        setup(30, "side_grass_3", true);
+
     }
 
     public void setup(int index, String imageName, boolean collision){
@@ -68,7 +70,7 @@ public class TileManager {
 
         try{
             tile[index] = new Tile();
-            tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tiles/" + imageName + ".png"));
+            tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tile/" + imageName + ".png"));
             tile[index].image = uTool.scaleImage(tile[index].image, gp.tileSize, gp.tileSize);
             tile[index].collision = collision;
 
@@ -93,7 +95,7 @@ public class TileManager {
 
                 while(col < gp.maxWorldCol){
 
-                    String numbers[] = line.split(" ");
+                    String numbers[] = line.split("\t");
 
                     int num = Integer.parseInt(numbers[col]);
 

@@ -117,6 +117,12 @@ public class KeyHandler implements KeyListener {
             }
         }
 
+        // TRANSITION STATE
+        else if(gp.gameState == gp.transitionState){
+            if(code == KeyEvent.VK_ENTER){
+                gp.gameState = gp.playState;
+            }
+        }
     }
 
     @Override
