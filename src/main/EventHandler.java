@@ -51,8 +51,8 @@ public class EventHandler {
 
         if(canTouchEvent == true){
             enterExitCave(gp.transitionState);
-            //checkSlipperyTile();
-            //checkNonSlipperyTile();
+            checkSlipperyTile();
+            checkNonSlipperyTile();
             buttonTrigger(gp.dialogState);
         }
     }

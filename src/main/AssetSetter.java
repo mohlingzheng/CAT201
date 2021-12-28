@@ -2,6 +2,7 @@ package main;
 
 import entity.NPC_King;
 import object.OBJ_Door;
+import object.OBJ_Key;
 
 public class AssetSetter {
 
@@ -13,6 +14,7 @@ public class AssetSetter {
 
     public void setObject(){
 
+        // Cave Mission
         gp.obj[0] = new OBJ_Door(gp);
         gp.obj[0].worldX = gp.tileSize*47;
         gp.obj[0].worldY = gp.tileSize*27;
@@ -33,6 +35,25 @@ public class AssetSetter {
         gp.obj[4].worldX = gp.tileSize*47;
         gp.obj[4].worldY = gp.tileSize*31;
 
+        gp.obj[5] = new OBJ_Key(gp);
+        gp.obj[5].worldX = gp.tileSize*45;
+        gp.obj[5].worldY = gp.tileSize*22;
+
+        gp.obj[6] = new OBJ_Key(gp);
+        gp.obj[6].worldX = gp.tileSize*50;
+        gp.obj[6].worldY = gp.tileSize*26;
+
+        gp.obj[7] = new OBJ_Key(gp);
+        gp.obj[7].worldX = gp.tileSize*49;
+        gp.obj[7].worldY = gp.tileSize*32;
+
+        gp.obj[8] = new OBJ_Key(gp);
+        gp.obj[8].worldX = gp.tileSize*53;
+        gp.obj[8].worldY = gp.tileSize*22;
+
+        // Set Object here
+
+
     }
     public void setNPC(){
 
@@ -44,12 +65,12 @@ public class AssetSetter {
 
     public void createDoor(int num, int col, int row, boolean existDoor){
         if(existDoor == true){
-            gp.obj[num] = new OBJ_Door(gp);
             gp.obj[num].worldX = gp.tileSize*col;
             gp.obj[num].worldY = gp.tileSize*row;
         }
         else if(existDoor == false){
-            gp.obj[num] = null;
+            gp.obj[num].worldX = gp.tileSize*0;
+            gp.obj[num].worldY = gp.tileSize*0;
         }
     }
 }
