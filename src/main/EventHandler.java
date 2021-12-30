@@ -100,7 +100,7 @@ public class EventHandler {
         for(int row = 18; row < 28; row++){
             for(int col = 24; col < 38; col++){
                 // Need to change mapTileNum accordingly
-                if(hit(col, row, "any") && gp.tileM.mapTileNum[col][row] == 13){
+                if(hit(col, row, "any") && gp.tileM.mapTileNum[col][row] == 104){
                     slipperyEvent = true;
                     canTouchEvent = true;
                 }

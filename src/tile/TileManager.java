@@ -20,7 +20,7 @@ public class TileManager {
 
         this.gp = gp;
 
-        tile = new Tile[100];
+        tile = new Tile[200];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
@@ -30,37 +30,61 @@ public class TileManager {
     public void getTileImage(){
 
         setup(0, "cave", false);
-        setup(1, "cave", false);
-        setup(2, "cave", false);
-        setup(3, "cave", false);
-        setup(4, "cave", false);
-        setup(5, "cave", false);
-        setup(6, "cave", false);
-        setup(7, "cave", false);
-        setup(8, "cave", false);
-        setup(9, "cave", false);
+        for (int i = 1; i < 21; i++){
+            String name = "maze/" + String.valueOf(i);
+            setup(i, name, true);
+        }
+        setup(21, "maze/21", false);
+        setup(22, "maze/21", false);
 
-        setup(10, "cave", true);
-        setup(11, "earth_1", false);
-        setup(12, "earth_2", false);
-        setup(13, "earth_3", false);
-        setup(14, "earth_4", false);
-        setup(15, "fence_grass_1", true);
-        setup(16, "fence_grass_2", true);
-        setup(17, "fence_grass_3", true);
-        setup(18, "grass_1", false);
-        setup(19, "grass_2", false);
-        setup(20, "grass_3", false);
-        setup(21, "tree_grass_1", true);
-        setup(22, "tree_grass_2", true);
-        setup(23, "tree_grass_3", true);
-        setup(24, "wall", true);
-        setup(25, "water_1", true);
-        setup(26, "water_2", true);
-        setup(27, "water_3", true);
-        setup(28, "side_grass_1", true);
-        setup(29, "side_grass_2", true);
-        setup(30, "side_grass_3", true);
+        for(int i = 23; i < 101; i++){
+            setup(i, "cave", true);
+        }
+
+//        setup(2, "maze/2", true);
+//        setup(3, "maze/3", true);
+//        setup(4, "maze/4", true);
+//        setup(5, "maze/5", true);
+//        setup(6, "maze/6", true);
+//        setup(7, "maze/7", true);
+//        setup(8, "maze/8", true);
+//        setup(9, "maze/9", true);
+//        setup(10, "maze/10", true);
+//        setup(11, "maze/11", true);
+//        setup(12, "maze/12", true);
+//        setup(13, "maze/13", true);
+//        setup(14, "maze/14", true);
+//        setup(15, "maze/15", true);
+//        setup(16, "maze/16", true);
+//        setup(17, "maze/17", true);
+//        setup(18, "maze/18", true);
+//        setup(19, "maze/19", true);
+//        setup(20, "maze/20", true);
+//        setup(21, "maze/21", false);
+//        setup(22, "maze/21", false);
+
+
+        setup(101, "cave", true);
+        setup(102, "earth_1", false);
+        setup(103, "earth_2", false);
+        setup(104, "earth_3", false);
+        setup(105, "earth_4", false);
+        setup(106, "fence_grass_1", true);
+        setup(107, "fence_grass_2", true);
+        setup(108, "fence_grass_3", true);
+        setup(109, "grass_1", false);
+        setup(110, "grass_2", false);
+        setup(111, "grass_3", false);
+        setup(112, "tree_grass_1", true);
+        setup(113, "tree_grass_2", true);
+        setup(114, "tree_grass_3", true);
+        setup(115, "wall", true);
+        setup(116, "water_1", true);
+        setup(117, "water_2", true);
+        setup(118, "water_3", true);
+        setup(119, "side_grass_1", true);
+        setup(120, "side_grass_2", true);
+        setup(121, "side_grass_3", true);
 
     }
 
