@@ -85,6 +85,9 @@ public class TileManager {
         setup(119, "side_grass_1", true);
         setup(120, "side_grass_2", true);
         setup(121, "side_grass_3", true);
+        setup(122, "forest/forest", false);
+        setup(123, "forest/forest_tree_1", true);
+        setup(124, "forest/forest_tree_2", true);
 
     }
 
