@@ -15,11 +15,15 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
     int standCounter = 0;
+    public int objIndex = 0;
+    public int npcIndex = 0;
+    public int stoneCount = 0;
 
     public Player(GamePanel gp, KeyHandler keyH){
 
         super(gp);
         this.keyH = keyH;
+        type = 0;
 
         screenX = gp.screenWidth/2 - (gp.tileSize/2);
         screenY = gp.screenHeight/2 - (gp.tileSize/2);
@@ -33,7 +37,7 @@ public class Player extends Entity{
         solidArea.height = 32;
 
         setDefaultValues();
-        getPlayerImage();
+        getCharacterImage("player", "player", 1);
     }
     public void setDefaultValues(){
 
@@ -46,18 +50,6 @@ public class Player extends Entity{
         maxLife = 6;
         life = maxLife;
     }
-    public void getPlayerImage(){
-
-        up1 = setup("/player/player_up_1");
-        up2 = setup("/player/player_up_2");
-        down1 = setup("/player/player_down_1");
-        down2 = setup("/player/player_down_2");
-        left1 = setup("/player/player_left_1");
-        left2 = setup("/player/player_left_2");
-        right1 = setup("/player/player_right_1");
-        right2 = setup("/player/player_right_2");
-
-    }
     public void update(){
 
         // If player is on slippery ground
@@ -66,12 +58,26 @@ public class Player extends Entity{
         }
         // Player is moving normally
         else if(keyH.upPressed == true || keyH.downPressed == true
-                || keyH.leftPressed == true || keyH.rightPressed == true){
+                || keyH.leftPressed == true || keyH.rightPressed == true ){
             normalUpdate();
         }
         // Player is standing still
         else{
             standUpdate();
+        }
+        // Check Invincible
+        if(invincible == true){
+            invincibleCounter++;
+            if(invincibleCounter > 60) {
+                invincible = false;
+                invincibleCounter = 0;
+            }
+        }
+        // When no life
+        if(life == 0){
+            gp.ui.currentDialogue = "You Are Dead!";
+            gp.ui.dialogueType = gp.ui.objInteractionState;
+            gp.gameState = gp.dialogState;
         }
     }
 
@@ -101,6 +107,13 @@ public class Player extends Entity{
         // CHECK NPC COLLISION
         int npcIndex = gp.cChecker.checkEntity(this, gp.npc);
         interactNPC(npcIndex);
+
+        // CHECK MONSTER COLLISION
+        int monster1Index = gp.cChecker.checkEntity(this, gp.monster1);
+        contactMonster(monster1Index);
+
+        int monster2Index  = gp.cChecker.checkEntity(this, gp.monster2);
+        contactMonster(monster2Index);
 
         // CHECK EVENT
         gp.eHandler.checkEvent();
@@ -136,8 +149,10 @@ public class Player extends Entity{
             }
             spriteCounter = 0;
         }
+
     }
 
+    // Change standing position image
     public void standUpdate(){
         standCounter++;
 
@@ -202,7 +217,30 @@ public class Player extends Entity{
         if(i != 999){
             if(gp.keyH.enterPressed == true){
                 gp.gameState = gp.dialogState;
+                gp.ui.dialogueType = gp.ui.conversationState;
                 gp.npc[i].speak();
+            }
+        }
+    }
+
+    public void contactMonster(int i){
+
+        if(i != 999){
+            if(invincible == false){
+                life -= 1;
+                invincible = true;
+            }
+        }
+    }
+
+    public void contactBullet(int i, int z) {
+
+        if(i != 999) {
+            if(z != 999) {
+                if (invincible == false) {
+                    life -= 1;
+                    invincible = true;
+                }
             }
         }
     }
@@ -267,11 +305,19 @@ public class Player extends Entity{
             y = gp.screenHeight - (gp.worldHeight - worldY);
         }
 
+        if(invincible == true) {
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
+        }
+
         g2.drawImage(image, x, y,null);
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 
         // SHOW COLLISION RECTANGLE
         g2.setColor(Color.red);
         g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+
+        g2.drawRect(gp.tileSize*68, gp.tileSize*83, gp.tileSize, gp.tileSize);
 
 
     }

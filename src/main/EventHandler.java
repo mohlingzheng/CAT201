@@ -1,6 +1,7 @@
 package main;
 
 import object.OBJ_Door;
+import object.OBJ_PowerStone;
 
 public class EventHandler {
 
@@ -82,6 +83,8 @@ public class EventHandler {
     }
 
     public void enterExitCave(int gameState){
+
+        // Cave Enter And Exit
         if(hit(55, 44, "any") == true){
             gp.gameState = gameState;
             gp.ui.currentDialogue = "You enter the cave!";
@@ -94,8 +97,37 @@ public class EventHandler {
             gp.player.worldX = gp.tileSize * 55;
             gp.player.worldY = gp.tileSize * 46;
         }
+
+        // Forest Enter And Exit
+        if(hit(84, 68, "any") == true){
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "You enter the forest!";
+            gp.player.worldX = gp.tileSize * 89;
+            gp.player.worldY = gp.tileSize * 35;
+        }
+        if(hit(88, 35, "any") == true){
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "You leave the forest!";
+            gp.player.worldX = gp.tileSize * 83;
+            gp.player.worldY = gp.tileSize * 68;
+        }
+
+        // Maze Enter And Exit
+        if(hit(55, 91, "any") == true){
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "You enter the maze!";
+            gp.player.worldX = gp.tileSize * 110;
+            gp.player.worldY = gp.tileSize * 92;
+        }
+        if(hit(110, 91, "any") == true){
+            gp.gameState = gameState;
+            gp.ui.currentDialogue = "You leave the forest!";
+            gp.player.worldX = gp.tileSize * 55;
+            gp.player.worldY = gp.tileSize * 92;
+        }
     }
 
+    // Cave Mission_1
     public void checkSlipperyTile(){
         for(int row = 18; row < 28; row++){
             for(int col = 24; col < 38; col++){
@@ -108,6 +140,7 @@ public class EventHandler {
         }
     }
 
+    // Cave Mission_1
     public void checkNonSlipperyTile(){
         if(hit(25, 27, "any") == true){
             slipperyEvent = false;
@@ -135,6 +168,7 @@ public class EventHandler {
         }
     }
 
+    // Cave Mission_2
     public void buttonTrigger(int gameState){
         int col = 45, row = 22;
         if(hit(col, row, "any") == true){
@@ -154,6 +188,7 @@ public class EventHandler {
         }
     }
 
+    // Cave Mission_2
     public void doorSwitch(int col, int row, int gameState){
         if(gp.keyH.enterPressed == true){
             int door1 = 0, door2 = 0;
@@ -180,7 +215,10 @@ public class EventHandler {
             doorCondition[door1] = !doorCondition[door1];
             doorCondition[door2] = !doorCondition[door2];
             gp.gameState = gameState;
+            gp.ui.dialogueType = gp.ui.objInteractionState;
             gp.ui.currentDialogue = "Two doors have been modified.";
         }
     }
+
+
 }

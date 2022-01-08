@@ -2,11 +2,13 @@ package main;
 
 import entity.Entity;
 import object.OBJ_Heart;
+import object.OBJ_PowerStone;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+
 
 public class UI {
 
@@ -19,8 +21,17 @@ public class UI {
     int messageCounter = 0;
     public boolean gameFinished = false;
     public String currentDialogue = "";
-    public int commmandNum = 0;
+    public int commandNum = 0;
     public int titleScreenState = 0;
+
+    // Create Mission Window
+    public String missionList[] = new String[3];
+    BufferedImage powerstone_image;
+
+    // If talk to NPC, will continue talking. If interact object, only once.
+    public int dialogueType = 0;
+    public final int conversationState = 1;
+    public final int objInteractionState = 2;
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -38,6 +49,13 @@ public class UI {
         heart_full = heart.image;
         heart_half = heart.image2;
         heart_blank = heart.image3;
+
+        // CREATE MISSION
+        Entity powerstone = new OBJ_PowerStone(gp);
+        powerstone_image = powerstone.image;
+        missionList[0] = "Find the pieces in North Cave";
+        missionList[1] = "Find the pieces in East Forest";
+        missionList[2] = "Find the pieces in South Maze";
     }
 
     public void showMessage(String text){
@@ -57,6 +75,7 @@ public class UI {
         }
         // PLAY STATE
         if(gp.gameState == gp.playState){
+            drawMissionListWindow();
             drawPlyaerLife();
         }
         // PAUSE STATE
@@ -67,6 +86,7 @@ public class UI {
         // DIALOG STATE
         if(gp.gameState == gp.dialogState){
             drawPlyaerLife();
+            drawMissionListWindow();
             drawDialogScreen();
         }
         // TRANSITION STATE
@@ -134,7 +154,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize*3.5;
             g2.drawString(text, x, y);
-            if(commmandNum == 0){
+            if(commandNum == 0){
                 g2.drawString(">", x-gp.tileSize, y);
             }
 
@@ -142,7 +162,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
-            if(commmandNum == 1){
+            if(commandNum == 1){
                 g2.drawString(">", x-gp.tileSize, y);
             }
 
@@ -150,7 +170,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
-            if(commmandNum == 2){
+            if(commandNum == 2){
                 g2.drawString(">", x-gp.tileSize, y);
             }
         }
@@ -169,7 +189,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize*2;
             g2.drawString(text, x, y);
-            if(commmandNum == 0){
+            if(commandNum == 0){
                 g2.drawString(">", x-gp.tileSize, y);
             }
 
@@ -177,7 +197,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
-            if(commmandNum == 1){
+            if(commandNum == 1){
                 g2.drawString(">", x-gp.tileSize, y);
             }
 
@@ -185,7 +205,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize;
             g2.drawString(text, x, y);
-            if(commmandNum == 2){
+            if(commandNum == 2){
                 g2.drawString(">", x-gp.tileSize, y);
             }
 
@@ -193,7 +213,7 @@ public class UI {
             x = getXforCenteredText(text);
             y += gp.tileSize*2;
             g2.drawString(text, x, y);
-            if(commmandNum == 3){
+            if(commandNum == 3){
                 g2.drawString(">", x-gp.tileSize, y);
             }
         }
@@ -253,6 +273,24 @@ public class UI {
         int x = gp.screenWidth/2 - length/2;
         int y = gp.screenHeight/2;
         g2.drawString(currentDialogue,x ,y);
+    }
+
+    public void drawMissionListWindow(){
+
+        Color myColor = new Color(0, 0, 0, 50);
+        int x = gp.tileSize * 11;
+        int y = gp.tileSize;
+
+        g2.setColor(myColor);
+        g2.fillRect(x, y, gp.tileSize*4, gp.tileSize*2);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10F));
+        g2.setColor(Color.white);
+        x = x + gp.tileSize;
+        for(int i = 0; i < 3; i++){
+            y = y + gp.tileSize/2;
+            g2.drawImage(powerstone_image, x- gp.tileSize, y - gp.tileSize/2, null);
+            g2.drawString(missionList[i],x ,y);
+        }
     }
 
     public int getXforCenteredText(String text){

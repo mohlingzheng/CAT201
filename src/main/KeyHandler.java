@@ -26,56 +26,56 @@ public class KeyHandler implements KeyListener {
 
             if(gp.ui.titleScreenState == 0){
                 if(code == KeyEvent.VK_W){
-                    gp.ui.commmandNum --;
-                    if(gp.ui.commmandNum < 0){
-                        gp.ui.commmandNum = 2;
+                    gp.ui.commandNum--;
+                    if(gp.ui.commandNum < 0){
+                        gp.ui.commandNum = 2;
                     }
                 }
                 if(code == KeyEvent.VK_S){
-                    gp.ui.commmandNum ++;
-                    if(gp.ui.commmandNum > 2){
-                        gp.ui.commmandNum = 0;
+                    gp.ui.commandNum++;
+                    if(gp.ui.commandNum > 2){
+                        gp.ui.commandNum = 0;
                     }
                 }
                 if(code == KeyEvent.VK_ENTER){
-                    if(gp.ui.commmandNum == 0){
+                    if(gp.ui.commandNum == 0){
                         gp.ui.titleScreenState = 1;
                     }
-                    if(gp.ui.commmandNum == 1){
+                    if(gp.ui.commandNum == 1){
 
                     }
-                    if(gp.ui.commmandNum == 2){
+                    if(gp.ui.commandNum == 2){
                         System.exit(0);
                     }
                 }
             }
             else if(gp.ui.titleScreenState == 1){
                 if(code == KeyEvent.VK_W){
-                    gp.ui.commmandNum --;
-                    if(gp.ui.commmandNum < 0){
-                        gp.ui.commmandNum = 3;
+                    gp.ui.commandNum--;
+                    if(gp.ui.commandNum < 0){
+                        gp.ui.commandNum = 3;
                     }
                 }
                 if(code == KeyEvent.VK_S){
-                    gp.ui.commmandNum ++;
-                    if(gp.ui.commmandNum > 3){
-                        gp.ui.commmandNum = 0;
+                    gp.ui.commandNum++;
+                    if(gp.ui.commandNum > 3){
+                        gp.ui.commandNum = 0;
                     }
                 }
                 if(code == KeyEvent.VK_ENTER){
-                    if(gp.ui.commmandNum == 0){
+                    if(gp.ui.commandNum == 0){
                         gp.gameState = gp.playState;
                         //gp.playMusic(0);
                     }
-                    if(gp.ui.commmandNum == 1){
+                    if(gp.ui.commandNum == 1){
                         gp.gameState = gp.playState;
                         //gp.playMusic(0);
                     }
-                    if(gp.ui.commmandNum == 2){
+                    if(gp.ui.commandNum == 2){
                         gp.gameState = gp.playState;
                         //gp.playMusic(0);
                     }
-                    if(gp.ui.commmandNum == 3){
+                    if(gp.ui.commandNum == 3){
                         gp.ui.titleScreenState = 0;
                     }
                 }
@@ -113,7 +113,12 @@ public class KeyHandler implements KeyListener {
         // DIALOGUE STATE
         else if(gp.gameState == gp.dialogState){
             if(code == KeyEvent.VK_ENTER){
-                gp.gameState = gp.playState;
+                if(gp.ui.dialogueType == gp.ui.conversationState){
+                    gp.player.npcIndex = gp.cChecker.checkEntity(gp.player, gp.npc);
+                    gp.npc[gp.player.npcIndex].speak();
+                }
+                else if(gp.ui.dialogueType == gp.ui.objInteractionState)
+                    gp.gameState = gp.playState;
             }
         }
 

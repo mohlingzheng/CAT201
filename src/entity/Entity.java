@@ -22,7 +22,7 @@ public class Entity {
     public boolean collisionOn = false;
     public int actionLockCounter = 0;
     String dialogues[] = new String[20];
-    int dialogueIndex = 0;
+    public int dialogueIndex = 0;
     public BufferedImage image, image2, image3;
     public String name;
     public boolean collision = false;
@@ -30,6 +30,16 @@ public class Entity {
     // CHARACTER STATUS
     public int maxLife;
     public int life;
+
+    // MONSTER STATUS
+    public int type;    // 0 = player, 1 = monster1, 2 = monster2, 3 = bullet, 5 = villager
+    public boolean invincible = false;
+    public int invincibleCounter = 0;
+    // MONSTER BULLET
+    public int bulletActionLockCounter = 0;
+
+    // CHANGE SPEECH
+    public int conversationState = 0;
 
     public Entity(GamePanel gp){
         this.gp = gp;
@@ -42,24 +52,28 @@ public class Entity {
 
         if(dialogues[dialogueIndex] == null){
             dialogueIndex = 0;
+            gp.gameState = gp.playState;
         }
-        gp.ui.currentDialogue = dialogues[dialogueIndex];
-        dialogueIndex++;
+        else{
+            gp.ui.currentDialogue = dialogues[dialogueIndex];
+            dialogueIndex++;
 
-        switch (gp.player.direction){
-            case "up":
-                direction = "down";
-                break;
-            case "down":
-                direction = "up";
-                break;
-            case "left":
-                direction = "right";
-                break;
-            case "right":
-                direction = "left";
-                break;
+            switch (gp.player.direction){
+                case "up":
+                    direction = "down";
+                    break;
+                case "down":
+                    direction = "up";
+                    break;
+                case "left":
+                    direction = "right";
+                    break;
+                case "right":
+                    direction = "left";
+                    break;
+            }
         }
+
     }
     public void update(){
 
@@ -68,10 +82,27 @@ public class Entity {
         collisionOn = false;
         gp.cChecker.checkTile(this);
         gp.cChecker.checkObject(this, false);
-        gp.cChecker.checkPlayer(this);
+        gp.cChecker.checkEntity(this, gp.npc);
+        gp.cChecker.checkEntity(this, gp.monster1);
+        gp.cChecker.checkEntity(this, gp.monster2);
+        boolean contactPlayer = gp.cChecker.checkPlayer(this);
 
-        // IF COLLISION IS FALSE, PLAYER CAN MOVE
-        if(collisionOn == false){
+        if(this.type == 1 && contactPlayer == true) {
+            if(gp.player.invincible == false) {
+                gp.player.life -= 1;
+                gp.player.invincible = true;
+            }
+        }
+        else if(this.type == 2 && contactPlayer == true) {
+            if(gp.player.invincible == false) {
+
+                gp.player.life -= 1;
+                gp.player.invincible = true;
+            }
+        }
+
+        // IF COLLISION IS FALSE, ANY ENTITY CAN MOVE EXCEPT VILLAGER(type = 5)
+        if(collisionOn == false && type != 5){
 
             switch (direction){
                 case "up":
@@ -98,6 +129,49 @@ public class Entity {
                 spriteNum = 1;
             }
             spriteCounter = 0;
+        }
+    }
+
+    public void updateBullet(int i, int z) {
+
+        collisionOn = false;
+        gp.cChecker.checkTile(this);
+        gp.cChecker.checkObject(this, false);
+        gp.cChecker.checkEntity(this, gp.npc);
+        gp.cChecker.checkEntity(this, gp.monster1);
+        gp.cChecker.checkEntity(this, gp.monster2);
+
+        int bulletIndex  = gp.cChecker.checkBullet(this, gp.bullet, gp.row, gp.col);
+
+        boolean contactPlayer = gp.cChecker.checkPlayer(this);
+
+        if(this.type == 3 && contactPlayer == true) {
+            if(gp.player.invincible == false) {
+
+                gp.player.life -= 1;
+                gp.player.invincible = true;
+                if(gp.bullet[i][z] != null) {
+                    gp.bullet[i][z] = null;
+                }
+            }
+        }
+
+        if(collisionOn == false) {
+
+            switch (direction){
+                case "up":
+                    worldY -= speed;
+                    break;
+                case "down":
+                    worldY += speed;
+                    break;
+                case "left":
+                    worldX -= speed;
+                    break;
+                case "right":
+                    worldX += speed;
+                    break;
+            }
         }
     }
 
@@ -165,5 +239,57 @@ public class Entity {
             e.printStackTrace();
         }
         return image;
+    }
+
+    public void setBulletAction() {
+
+        bulletActionLockCounter ++;
+
+        if(bulletActionLockCounter == 60) {
+
+            switch (direction){
+                case "up":
+                    worldY -= speed;
+                    break;
+                case "down":
+                    worldY += speed;
+                    break;
+                case "left":
+                    worldX -= speed;
+                    break;
+                case "right":
+                    worldX += speed;
+                    break;
+            }
+            bulletActionLockCounter = 0;
+        }
+    }
+
+    public void getCharacterImage(String characterDirectory, String characterName, int style){
+
+        // setup all image
+        if(style == 1){
+            up1 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
+            up2 = setup("/" + characterDirectory + "/" + characterName + "_up_2");
+            down1 = setup("/" + characterDirectory + "/" + characterName + "_down_1");
+            down2 = setup("/" + characterDirectory + "/" + characterName + "_down_2");
+            left1 = setup("/" + characterDirectory + "/" + characterName + "_left_1");
+            left2 = setup("/" + characterDirectory + "/" + characterName + "_left_2");
+            right1 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
+            right2 = setup("/" + characterDirectory + "/" + characterName + "_right_2");
+        }
+        // setup one type only
+        else if(style == 2){
+            up1 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
+            up2 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
+            down1 = setup("/" + characterDirectory + "/" + characterName + "_down_1");
+            down2 = setup("/" + characterDirectory + "/" + characterName + "_down_1");
+            left1 = setup("/" + characterDirectory + "/" + characterName + "_left_1");
+            left2 = setup("/" + characterDirectory + "/" + characterName + "_left_1");
+            right1 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
+            right2 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
+        }
+
+
     }
 }

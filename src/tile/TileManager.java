@@ -20,7 +20,7 @@ public class TileManager {
 
         this.gp = gp;
 
-        tile = new Tile[200];
+        tile = new Tile[500];
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
@@ -40,29 +40,6 @@ public class TileManager {
         for(int i = 23; i < 101; i++){
             setup(i, "cave", true);
         }
-
-//        setup(2, "maze/2", true);
-//        setup(3, "maze/3", true);
-//        setup(4, "maze/4", true);
-//        setup(5, "maze/5", true);
-//        setup(6, "maze/6", true);
-//        setup(7, "maze/7", true);
-//        setup(8, "maze/8", true);
-//        setup(9, "maze/9", true);
-//        setup(10, "maze/10", true);
-//        setup(11, "maze/11", true);
-//        setup(12, "maze/12", true);
-//        setup(13, "maze/13", true);
-//        setup(14, "maze/14", true);
-//        setup(15, "maze/15", true);
-//        setup(16, "maze/16", true);
-//        setup(17, "maze/17", true);
-//        setup(18, "maze/18", true);
-//        setup(19, "maze/19", true);
-//        setup(20, "maze/20", true);
-//        setup(21, "maze/21", false);
-//        setup(22, "maze/21", false);
-
 
         setup(101, "cave", true);
         setup(102, "earth_1", false);
@@ -88,6 +65,33 @@ public class TileManager {
         setup(122, "forest/forest", false);
         setup(123, "forest/forest_tree_1", true);
         setup(124, "forest/forest_tree_2", true);
+
+        // Tree 125 until 139
+        for(int i = 0; i < 15; i++){
+            setup(125+i, "tree/tree_1-" + String.valueOf(i+1) + ".png", false);
+        }
+
+        // Bridge 140 until 174
+        for(int i = 0; i < 35; i++){
+            if(i==2||i==4||i==32||i==34){
+                setup(140+i, "earth_1", false);
+            }
+            else {
+                setup(140+i, "bridge/bridge-" + String.valueOf(i+1) + ".png", false);
+            }
+
+        }
+
+        // Broken Bridge 175 until 209
+        for(int i = 0; i < 35; i++){
+            if(i==2||i==3||i==32||i==33){
+                setup(175+i, "earth_1", false);
+            }
+            else {
+                setup(175+i, "bridge/xbridge-" + String.valueOf(i+1) + ".png", false);
+            }
+
+        }
 
     }
 

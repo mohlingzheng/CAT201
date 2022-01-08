@@ -43,10 +43,16 @@ public class GamePanel extends JPanel implements Runnable{
     public EventHandler eHandler = new EventHandler(this);
     Thread gameThread;
 
+    // MONSTER
+    public int k = 0, row = 20, col = 20, indexI = 0;
+    public Entity[] monster1 = new Entity[20];
+    public Entity[] monster2 = new Entity[20];
+    public Entity[][] bullet = new Entity[row][col];
+
     // ENTITY AND OBJECT
     public Player player = new Player(this, keyH);
-    public Entity obj[] = new Entity[10];
-    public Entity npc[] = new Entity[10];
+    public Entity obj[] = new Entity[30];
+    public Entity npc[] = new Entity[30];
     ArrayList<Entity> entityList = new ArrayList<>();
 
     // GAME STATE
@@ -71,9 +77,12 @@ public class GamePanel extends JPanel implements Runnable{
 
         aSetter.setObject();
         aSetter.setNPC();
+        aSetter.setMonster1();
+        aSetter.setMonster2();
 //        playMusic(0);
 //        stopMusic();
         gameState = titleState;
+
     }
 
     public void startGameThread(){
@@ -90,11 +99,21 @@ public class GamePanel extends JPanel implements Runnable{
         long lastTime = System.nanoTime();
         long currentTime;
 
+        // MONSTER BULLET
+        long timer = 0;
+        long bulletTimer = 0;
+        long bulletRemoveTimer = 0;
+        int drawCount = 0;
+
         while (gameThread != null){
 
             currentTime = System.nanoTime();
 
             delta += (currentTime - lastTime) / drawInterval;
+
+            timer += (currentTime - lastTime);
+            bulletTimer += (currentTime - lastTime);
+            bulletRemoveTimer += (currentTime - lastTime);
 
             lastTime = currentTime;
 
@@ -104,20 +123,66 @@ public class GamePanel extends JPanel implements Runnable{
                 delta--;
             }
 
+            if(timer >= 1000000000){
+
+                System.out.println("FPS:" + drawCount);
+
+                drawCount = 0;
+                timer = 0;
+            }
+            long bullettimer = (bulletTimer/1000000000);
+            long bulletremovetimer = (bulletRemoveTimer/1000000000);
+            if(bullettimer >= 2){
+
+                aSetter.setBullet();
+                bulletTimer = 0;
+            }
+
         }
     }
 
     public void update(){
 
         if(gameState == playState){
+            // PLAYER
             player.update();
 
+            // NPC
             for(int i = 0; i < npc.length; i++){
                 if(npc[i] != null){
                     npc[i].update();
                 }
             }
+            // MONSTER
+            for(int i = 0; i < monster1.length; i++){
+                if(monster1[i] != null){
+                    monster1[i].update();
+                }
+            }
+
+            // BULLET
+            for(int i = 0; i < row; i++) {
+                for(int z = 0; z < col; z++) {
+                    if (bullet[i][z] != null) {
+                        bullet[i][z].updateBullet(i, z);
+                        if(bullet[i][z] != null) {
+                            if (bullet[i][z].collisionOn) {
+                                bullet[i][z].worldX = 0;
+                                bullet[i][z].worldY = 0;
+                                bullet[i][z] = null;
+                            }
+                        }
+                    }
+                }
+            }
+
+
         }
+
+        if(gameState == dialogState){
+
+        }
+
         if(gameState == pauseState){
 
         }
@@ -152,6 +217,26 @@ public class GamePanel extends JPanel implements Runnable{
                 }
             }
 
+            for(int i = 0; i < monster1.length; i++){
+                if(monster1[i] != null){
+                    entityList.add(monster1[i]);
+                }
+            }
+
+            for(int i = 0; i < monster2.length; i++){
+                if(monster2[i] != null){
+                    entityList.add(monster2[i]);
+                }
+            }
+
+            for(int i = 0; i < row; i++) {
+                for(int j = 0; j < col; j++) {
+                    if (bullet[i][j] != null) {
+                        entityList.add(bullet[i][j]);
+                    }
+                }
+            }
+
             // SORT
             Collections.sort(entityList, new Comparator<Entity>() {
                 @Override
@@ -168,15 +253,11 @@ public class GamePanel extends JPanel implements Runnable{
                 entityList.get(i).draw(g2);
             }
             // EMPTY ENTITY LIST
-            for(int i = 0; i < entityList.size(); i++){
-                entityList.remove(i);
-            }
+            entityList.clear();
 
             // UI
             ui.draw(g2);
         }
-
-
 
         g2.dispose();
     }
