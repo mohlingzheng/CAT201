@@ -44,9 +44,9 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
 
     // MONSTER
-    public int k = 0, row = 20, col = 20, indexI = 0;
-    public Entity[] monster1 = new Entity[20];
-    public Entity[] monster2 = new Entity[20];
+    public int k = 0, row = 40, col = 20, indexI = 0;
+    public Entity[] monster1 = new Entity[40];
+    public Entity[] monster2 = new Entity[40];
     public Entity[][] bullet = new Entity[row][col];
 
     // ENTITY AND OBJECT

@@ -43,16 +43,12 @@ public class Bullet extends Entity {
 
     public void updateBullet(int i, int z) {
 
-        //setAction();
-        //setBulletAction();
         collisionOn = false;
         gp.cChecker.checkTile(this);
         gp.cChecker.checkObject(this, false);
         gp.cChecker.checkEntity(this, gp.npc);
         gp.cChecker.checkEntity(this, gp.monster1);
         gp.cChecker.checkEntity(this, gp.monster2);
-
-        int bulletIndex  = gp.cChecker.checkBullet(this, gp.bullet, gp.row, gp.col);
 
         boolean contactPlayer = gp.cChecker.checkPlayer(this);
 

@@ -217,7 +217,8 @@ public class Player extends Entity{
                             break;
                         case 10:
                             gp.progressState = gp.mazeState;
-                            gp.obj[i].image = gp.obj[i].down1;
+                            gp.obj[19].image = gp.obj[19].down1;
+                            gp.obj[19].collision = false;
                             gp.npc[6].conversationState = 4;
                             break;
                         case 11:
