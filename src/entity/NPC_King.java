@@ -13,7 +13,7 @@ public class NPC_King extends Entity{
         direction = "down";
         speed = 1;
 
-        getCharacterImage("npc", "king", 1);
+        getCharacterImage("npc/kings", "king", 1);
         setDialogue();
     }
 

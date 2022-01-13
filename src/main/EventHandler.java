@@ -1,8 +1,5 @@
 package main;
 
-import object.OBJ_Door;
-import object.OBJ_PowerStone;
-
 public class EventHandler {
 
     GamePanel gp;
@@ -55,8 +52,10 @@ public class EventHandler {
             checkSlipperyTile();
             checkNonSlipperyTile();
             buttonTrigger(gp.dialogState);
+            checkPoint();
         }
     }
+
     public boolean hit(int col, int row, String reqDirection){
         boolean hit = false;
 
@@ -124,6 +123,20 @@ public class EventHandler {
             gp.ui.currentDialogue = "You leave the forest!";
             gp.player.worldX = gp.tileSize * 55;
             gp.player.worldY = gp.tileSize * 92;
+        }
+    }
+
+    public void checkPoint(){
+
+        if(gp.progressState != 0){
+            return;
+        }
+        else{
+            for(int i = 53; i < 58; i++){
+                if(hit(i, 65, "any")){
+                    gp.progressState = gp.caveState;
+                }
+            }
         }
     }
 

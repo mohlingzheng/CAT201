@@ -49,9 +49,9 @@ public class TileManager {
         setup(106, "fence_grass_1", true);
         setup(107, "fence_grass_2", true);
         setup(108, "fence_grass_3", true);
-        setup(109, "grass_1", false);
-        setup(110, "grass_2", false);
-        setup(111, "grass_3", false);
+        setup(109, "grass", false);
+        setup(110, "grass", false);
+        setup(111, "grass", false);
         setup(112, "tree_grass_1", true);
         setup(113, "tree_grass_2", true);
         setup(114, "tree_grass_3", true);
@@ -65,33 +65,10 @@ public class TileManager {
         setup(122, "forest/forest", false);
         setup(123, "forest/forest_tree_1", true);
         setup(124, "forest/forest_tree_2", true);
+        setup(125, "black", true);
+        setup(126, "forest/forest_tree_3", true);
 
-        // Tree 125 until 139
-        for(int i = 0; i < 15; i++){
-            setup(125+i, "tree/tree_1-" + String.valueOf(i+1) + ".png", false);
-        }
 
-        // Bridge 140 until 174
-        for(int i = 0; i < 35; i++){
-            if(i==2||i==4||i==32||i==34){
-                setup(140+i, "earth_1", false);
-            }
-            else {
-                setup(140+i, "bridge/bridge-" + String.valueOf(i+1) + ".png", false);
-            }
-
-        }
-
-        // Broken Bridge 175 until 209
-        for(int i = 0; i < 35; i++){
-            if(i==2||i==3||i==32||i==33){
-                setup(175+i, "earth_1", false);
-            }
-            else {
-                setup(175+i, "bridge/xbridge-" + String.valueOf(i+1) + ".png", false);
-            }
-
-        }
 
     }
 

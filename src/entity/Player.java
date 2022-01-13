@@ -2,12 +2,9 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 public class Player extends Entity{
 
@@ -41,8 +38,8 @@ public class Player extends Entity{
     }
     public void setDefaultValues(){
 
-        worldX = gp.tileSize * 55;
-        worldY = gp.tileSize * 70;
+        worldX = gp.tileSize * 28;
+        worldY = gp.tileSize * 67;
         speed = 8;
         direction = "down";
 
@@ -75,9 +72,7 @@ public class Player extends Entity{
         }
         // When no life
         if(life == 0){
-            gp.ui.currentDialogue = "You Are Dead!";
-            gp.ui.dialogueType = gp.ui.objInteractionState;
-            gp.gameState = gp.dialogState;
+            reviveLocation();
         }
     }
 
@@ -162,6 +157,7 @@ public class Player extends Entity{
         }
     }
 
+    // Cave Mission
     public void slipperyUpdate(){
         // CHECK TILE COLLISION
         collisionOn = false;
@@ -204,10 +200,34 @@ public class Player extends Entity{
         }
     }
 
+    // Pick up Power Stone
     public void pickUpObject(int i){
 
         if(i != 999){
 
+            String objectName = gp.obj[i].name;
+
+            switch (objectName){
+                case "Power Stone":
+                    switch (i){
+                        case 9:
+                            gp.progressState = gp.forestState;
+                            gp.obj[i] = null;
+                            gp.npc[5].conversationState = 2;
+                            break;
+                        case 10:
+                            gp.progressState = gp.mazeState;
+                            gp.obj[i].image = gp.obj[i].down1;
+                            gp.npc[6].conversationState = 4;
+                            break;
+                        case 11:
+                            gp.progressState = gp.endingState;
+                            break;
+                    }
+                    stoneCount++;
+                    gp.obj[i] = null;
+                    break;
+            }
 
         }
     }
@@ -243,6 +263,36 @@ public class Player extends Entity{
                 }
             }
         }
+    }
+
+    // Set Player position when dead
+    public void reviveLocation(){
+
+        gp.ui.currentDialogue = "You Are Dead!";
+        gp.ui.dialogueType = gp.ui.objInteractionState;
+        gp.gameState = gp.dialogState;
+        if(gp.progressState == gp.earlyState){
+            gp.player.worldX = gp.tileSize * 28;
+            gp.player.worldY = gp.tileSize * 67;
+        }
+        else if(gp.progressState == gp.caveState){
+            gp.player.worldX = gp.tileSize * 55;
+            gp.player.worldY = gp.tileSize * 66;
+        }
+        else if(gp.progressState == gp.forestState){
+            gp.player.worldX = gp.tileSize * 57;
+            gp.player.worldY = gp.tileSize * 68;
+        }
+        else if(gp.progressState == gp.mazeState){
+            gp.player.worldX = gp.tileSize * 55;
+            gp.player.worldY = gp.tileSize * 70;
+        }
+        else if(gp.progressState == gp.endingState){
+            gp.player.worldX = gp.tileSize * 53;
+            gp.player.worldY = gp.tileSize * 68;
+        }
+
+        life = maxLife;
     }
 
     public void draw(Graphics2D g2){

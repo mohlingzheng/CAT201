@@ -63,6 +63,13 @@ public class GamePanel extends JPanel implements Runnable{
     public final int dialogState = 3;
     public final int transitionState = 4;
 
+    // PROGRESS STATE
+    public int progressState = 0;
+    public final int earlyState = 0;
+    public final int caveState = 1;
+    public final int forestState = 2;
+    public final int mazeState = 3;
+    public final int endingState = 4;
 
     public GamePanel(){
 
@@ -101,8 +108,6 @@ public class GamePanel extends JPanel implements Runnable{
 
         // MONSTER BULLET
         long timer = 0;
-        long bulletTimer = 0;
-        long bulletRemoveTimer = 0;
         int drawCount = 0;
 
         while (gameThread != null){
@@ -112,8 +117,6 @@ public class GamePanel extends JPanel implements Runnable{
             delta += (currentTime - lastTime) / drawInterval;
 
             timer += (currentTime - lastTime);
-            bulletTimer += (currentTime - lastTime);
-            bulletRemoveTimer += (currentTime - lastTime);
 
             lastTime = currentTime;
 
@@ -125,19 +128,11 @@ public class GamePanel extends JPanel implements Runnable{
 
             if(timer >= 1000000000){
 
-                System.out.println("FPS:" + drawCount);
+//                System.out.println("FPS:" + drawCount);
 
                 drawCount = 0;
                 timer = 0;
             }
-            long bullettimer = (bulletTimer/1000000000);
-            long bulletremovetimer = (bulletRemoveTimer/1000000000);
-            if(bullettimer >= 2){
-
-                aSetter.setBullet();
-                bulletTimer = 0;
-            }
-
         }
     }
 
@@ -146,6 +141,7 @@ public class GamePanel extends JPanel implements Runnable{
         if(gameState == playState){
             // PLAYER
             player.update();
+            aSetter.setBullet();
 
             // NPC
             for(int i = 0; i < npc.length; i++){

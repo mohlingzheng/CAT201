@@ -41,8 +41,14 @@ public class Entity {
     // CHANGE SPEECH
     public int conversationState = 0;
 
+    // IMAGE SCALE
+    public int imageWidth;
+    public int imageHeight;
+
     public Entity(GamePanel gp){
         this.gp = gp;
+        imageWidth = gp.tileSize;
+        imageHeight = gp.tileSize;
     }
 
     public void setAction(){
@@ -241,6 +247,21 @@ public class Entity {
         return image;
     }
 
+    public BufferedImage setupScaledImage(String imagePath){
+
+        UtilityTool uTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try {
+            image = ImageIO.read(getClass().getResourceAsStream(imagePath + ".png"));
+            image = uTool.scaleImage(image, imageWidth, imageHeight);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return image;
+    }
+
     public void setBulletAction() {
 
         bulletActionLockCounter ++;
@@ -267,7 +288,7 @@ public class Entity {
 
     public void getCharacterImage(String characterDirectory, String characterName, int style){
 
-        // setup all image
+        // setup all image (with moving animation)
         if(style == 1){
             up1 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
             up2 = setup("/" + characterDirectory + "/" + characterName + "_up_2");
@@ -278,7 +299,7 @@ public class Entity {
             right1 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
             right2 = setup("/" + characterDirectory + "/" + characterName + "_right_2");
         }
-        // setup one type only
+        // setup one type only (without moving animation)
         else if(style == 2){
             up1 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
             up2 = setup("/" + characterDirectory + "/" + characterName + "_up_1");
@@ -292,4 +313,5 @@ public class Entity {
 
 
     }
+
 }

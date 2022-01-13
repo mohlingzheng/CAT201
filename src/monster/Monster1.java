@@ -28,14 +28,7 @@ public class Monster1 extends Entity {
     }
 
     public void getImage(){
-        up1 = setup("/monsters/monster_up_1");
-        up2 = setup("/monsters/monster_up_2");
-        down1 = setup("/monsters/monster_down_1");
-        down2 = setup("/monsters/monster_down_2");
-        left1 = setup("/monsters/monster_left_1");
-        left2 = setup("/monsters/monster_left_2");
-        right1 = setup("/monsters/monster_right_1");
-        right2 = setup("/monsters/monster_right_2");
+        getCharacterImage("monster", "monster", 1);
     }
 
     public void setAction(){
@@ -47,7 +40,6 @@ public class Monster1 extends Entity {
             Random random = new Random();
             int i = random.nextInt(100) + 1;
             if (i <= 25) {
-
                 direction = "up";
             }
             if (i > 25 && i <= 50) {

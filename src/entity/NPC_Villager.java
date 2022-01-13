@@ -2,8 +2,6 @@ package entity;
 
 import main.GamePanel;
 
-import java.util.Random;
-
 public class NPC_Villager extends Entity{
 
     public NPC_Villager(GamePanel gp){
@@ -12,9 +10,8 @@ public class NPC_Villager extends Entity{
         direction = "down";
         speed = 1;
 
-        getCharacterImage("npc", "oldman", 2);
+        getCharacterImage("npc/oldman", "oldman", 2);
         setDialogue();
-
     }
 
     public void setDialogue(){

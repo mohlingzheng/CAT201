@@ -17,7 +17,8 @@ public class Monster2 extends Entity {
         speed = 1;
         maxLife = 4;
         life = maxLife;
-        down1 = setup("/monsters/monster");
+        getCharacterImage("monster/monster2", "static", 2);
+        direction = "down";
 
         solidArea.x = 3;
         solidArea.y = 18;

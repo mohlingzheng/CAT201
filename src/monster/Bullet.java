@@ -30,14 +30,14 @@ public class Bullet extends Entity {
 
     public void getImage(){
 
-        up1 = setup("/monsters/bullet");
-        up2 = setup("/monsters/bullet");
-        down1 = setup("/monsters/bullet");
-        down2 = setup("/monsters/bullet");
-        left1 = setup("/monsters/bullet");
-        left2 = setup("/monsters/bullet");
-        right1 = setup("/monsters/bullet");
-        right2 = setup("/monsters/bullet");
+        up1 = setup("/monster/bullet");
+        up2 = setup("/monster/bullet");
+        down1 = setup("/monster/bullet");
+        down2 = setup("/monster/bullet");
+        left1 = setup("/monster/bullet");
+        left2 = setup("/monster/bullet");
+        right1 = setup("/monster/bullet");
+        right2 = setup("/monster/bullet");
 
     }
 
