@@ -10,7 +10,7 @@ public class NPC_Worker extends Entity{
         direction = "down";
         speed = 1;
 
-        getCharacterImage("npc/oldman", "oldman", 2);
+        getCharacterImage("npc/worker", "worker", 2);
         setDialogue();
     }
 

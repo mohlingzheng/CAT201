@@ -18,11 +18,12 @@ public class OBJ_Tree extends Entity {
 
         name = "Tree";
         direction = "down";
-        down1 = setupScaledImage("/object/tree123");
-        image = down1;
 
         imageWidth = gp.tileSize * 3;
         imageHeight = gp.tileSize * 5;
+
+        down1 = setupScaledImage("/object/tree123");
+        image = down1;
 
         collision = true;
 

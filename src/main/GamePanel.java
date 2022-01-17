@@ -20,8 +20,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int tileSize = originalTileSize * scaleUp / scaleDown; //48x48 tile
     public final int maxScreenCol = 15;
     public final int maxScreenRow = 12;
-    public final int screenWidth = tileSize * maxScreenCol; // 768 pixels
-    public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
+    public final int screenWidth = tileSize * maxScreenCol; // 720 pixels   816 pixel
+    public final int screenHeight = tileSize * maxScreenRow; // 576 pixels  672 pixel
 
     // WORLD SETTINGS
     public final int maxWorldCol = 164;
@@ -62,14 +62,18 @@ public class GamePanel extends JPanel implements Runnable{
     public final int pauseState = 2;
     public final int dialogState = 3;
     public final int transitionState = 4;
+    public final int videoState = 5;
 
     // PROGRESS STATE
     public int progressState = 0;
     public final int earlyState = 0;
-    public final int caveState = 1;
-    public final int forestState = 2;
-    public final int mazeState = 3;
-    public final int endingState = 4;
+    public final int caveInState = 1;
+    public final int caveOutState = 2;
+    public final int forestInState = 3;
+    public final int forestOutState = 4;
+    public final int mazeInState = 5;
+    public final int mazeOutState = 6;
+    public final int endingState = 7;
 
     public GamePanel(){
 

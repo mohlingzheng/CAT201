@@ -29,7 +29,8 @@ public class TileManager {
 
     public void getTileImage(){
 
-        setup(0, "cave", false);
+        // Tile for Maze
+        setup(0, "cave/cave", false);
         for (int i = 1; i < 21; i++){
             String name = "maze/" + String.valueOf(i);
             setup(i, name, true);
@@ -38,37 +39,60 @@ public class TileManager {
         setup(22, "maze/21", false);
 
         for(int i = 23; i < 101; i++){
-            setup(i, "cave", true);
+            setup(i, "cave/cave", true);
         }
 
-        setup(101, "cave", true);
-        setup(102, "earth_1", false);
-        setup(103, "earth_2", false);
-        setup(104, "earth_3", false);
-        setup(105, "earth_4", false);
-        setup(106, "fence_grass_1", true);
-        setup(107, "fence_grass_2", true);
-        setup(108, "fence_grass_3", true);
-        setup(109, "grass", false);
-        setup(110, "grass", false);
-        setup(111, "grass", false);
-        setup(112, "tree_grass_1", true);
-        setup(113, "tree_grass_2", true);
-        setup(114, "tree_grass_3", true);
-        setup(115, "wall", true);
-        setup(116, "water_1", true);
-        setup(117, "water_2", true);
-        setup(118, "water_3", true);
-        setup(119, "side_grass_1", true);
-        setup(120, "side_grass_2", true);
-        setup(121, "side_grass_3", true);
-        setup(122, "forest/forest", false);
-        setup(123, "forest/forest_tree_1", true);
-        setup(124, "forest/forest_tree_2", true);
-        setup(125, "black", true);
-        setup(126, "forest/forest_tree_3", true);
+        // Tile for Normal
+        setup(101, "normal/earth_1", false);
+        setup(102, "normal/earth_grass_1", false);
+        setup(103, "normal/earth_grass_2", false);
+        setup(104, "normal/earth_grass_3", false);
+        setup(105, "normal/earth_grass_4", false);
+        setup(106, "normal/earth_grass_5", false);
+        setup(107, "normal/earth_grass_6", false);
+        setup(108, "normal/earth_grass_7", false);
+        setup(109, "normal/earth_grass_8", false);
+        setup(110, "normal/earth_side_down", false);
+        setup(111, "normal/earth_side_left", false);
+        setup(112, "normal/earth_side_right", false);
+        setup(113, "normal/earth_side_up", false);
+        setup(114, "normal/fence", true);
+        setup(115, "normal/fence_side_left", true);
+        setup(116, "normal/fence_side_right", true);
+        setup(117, "normal/flower", false);
+        setup(118, "normal/forest_tree_1", true);
+        setup(119, "normal/forest_tree_2", true);
+        setup(120, "normal/forest_tree_3", true);
+        setup(121, "normal/grass", false);
+        setup(122, "normal/water", true);
+        setup(123, "normal/tree_1", true);
+        setup(124, "normal/tree_2", true);
+        setup(125, "normal/tree_3", true);
+        setup(126, "normal/tree_4", true);
 
+        for(int i = 127; i < 131; i++){
+            setup(i, "normal/grass", false);
+        }
 
+        // Tile for Cave
+        setup(131, "cave/cave", true);
+        setup(132, "cave/cave_stone", true);
+        setup(133, "cave/cave_tiles_1", true);
+        setup(134, "cave/cave_tiles_2", true);
+        setup(135, "cave/cave_tiles_3", true);
+        setup(136, "cave/cave_tiles_4", true);
+        setup(137, "cave/earth_3", false);
+        setup(138, "cave/earth_4", false);
+
+        for(int i = 139; i < 151; i++){
+            setup(i, "cave/cave", true);
+        }
+
+        // Tile for Forest
+        setup(151, "forest/forest", false);
+        setup(152, "forest/forest_tree_1", true);
+        setup(153, "forest/forest_tree_2", true);
+        setup(154, "forest/forest_tree_3", true);
 
     }
 
@@ -86,6 +110,21 @@ public class TileManager {
             e.printStackTrace();
         }
 
+    }
+
+    public void setupScaled(int index, String imageName, boolean collision){
+
+        UtilityTool uTool = new UtilityTool();
+
+        try{
+            tile[index] = new Tile();
+            tile[index].image = ImageIO.read(getClass().getResourceAsStream("/tile/" + imageName + ".png"));
+            tile[index].image = uTool.scaleImage(tile[index].image, 116, 138);
+            tile[index].collision = collision;
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void loadMap(String filePath){

@@ -3,6 +3,9 @@ package monster;
 import entity.Entity;
 import main.GamePanel;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
 public class Bullet extends Entity {
 
     GamePanel gp;
@@ -25,60 +28,91 @@ public class Bullet extends Entity {
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
-        getImage();
+        getCharacterImage("monster/bullet", "bullet", 2);
     }
 
     public void getImage(){
 
-        up1 = setup("/monster/bullet");
-        up2 = setup("/monster/bullet");
-        down1 = setup("/monster/bullet");
-        down2 = setup("/monster/bullet");
-        left1 = setup("/monster/bullet");
-        left2 = setup("/monster/bullet");
-        right1 = setup("/monster/bullet");
-        right2 = setup("/monster/bullet");
+        up1 = setup("/monster/bullet/bullet_up");
+        up2 = setup("/monster/bullet_up");
+        down1 = setup("/monster/bullet_down");
+        down2 = setup("/monster/bullet_down");
+        left1 = setup("/monster/bullet_left");
+        left2 = setup("/monster/bullet_left");
+        right1 = setup("/monster/bullet_right");
+        right2 = setup("/monster/bullet_right");
 
     }
 
-    public void updateBullet(int i, int z) {
+//    public void updateBullet(int i, int z) {
+//
+//        collisionOn = false;
+//        gp.cChecker.checkTile(this);
+//        gp.cChecker.checkObject(this, false);
+//        gp.cChecker.checkEntity(this, gp.npc);
+//        gp.cChecker.checkEntity(this, gp.monster1);
+//        gp.cChecker.checkEntity(this, gp.monster2);
+//
+//        boolean contactPlayer = gp.cChecker.checkPlayer(this);
+//
+//        if(this.type == 3 && contactPlayer == true) {
+//            if(gp.player.invincible == false) {
+//
+//                gp.player.life -= 1;
+//                gp.player.invincible = true;
+//                if(gp.bullet[i][z] != null) {
+//                    gp.bullet[i][z] = null;
+//                }
+//            }
+//        }
+//
+//        if(collisionOn == false) {
+//
+//            switch (direction){
+//                case "up":
+//                    worldY -= speed;
+//                    break;
+//                case "down":
+//                    worldY += speed;
+//                    break;
+//                case "left":
+//                    worldX -= speed;
+//                    break;
+//                case "right":
+//                    worldX += speed;
+//                    break;
+//            }
+//        }
+//    }
 
-        collisionOn = false;
-        gp.cChecker.checkTile(this);
-        gp.cChecker.checkObject(this, false);
-        gp.cChecker.checkEntity(this, gp.npc);
-        gp.cChecker.checkEntity(this, gp.monster1);
-        gp.cChecker.checkEntity(this, gp.monster2);
+    public void draw(Graphics2D g2){
 
-        boolean contactPlayer = gp.cChecker.checkPlayer(this);
+        BufferedImage image = null;
+        int screenX = worldX - gp.player.worldX + gp.player.screenX;
+        int screenY = worldY - gp.player.worldY + gp.player.screenY;
 
-        if(this.type == 3 && contactPlayer == true) {
-            if(gp.player.invincible == false) {
-
-                gp.player.life -= 1;
-                gp.player.invincible = true;
-                if(gp.bullet[i][z] != null) {
-                    gp.bullet[i][z] = null;
-                }
-            }
-        }
-
-        if(collisionOn == false) {
+        if(worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
+                worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
+                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
+                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY){
 
             switch (direction){
                 case "up":
-                    worldY -= speed;
+                    image = up1;
                     break;
                 case "down":
-                    worldY += speed;
+                    image = down1;
                     break;
                 case "left":
-                    worldX -= speed;
+                    image = left1;
                     break;
                 case "right":
-                    worldX += speed;
+                    image = right1;
                     break;
             }
+            g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
         }
+//        g2.setColor(Color.red);
+//        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
     }
 }

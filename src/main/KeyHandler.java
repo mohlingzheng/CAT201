@@ -41,7 +41,7 @@ public class KeyHandler implements KeyListener {
                 }
                 if(code == KeyEvent.VK_ENTER){
                     if(gp.ui.commandNum == 0){
-                        gp.gameState = gp.playState;
+                        gp.gameState = gp.videoState;
                     }
                     if(gp.ui.commandNum == 1){
                         System.exit(0);
@@ -82,7 +82,7 @@ public class KeyHandler implements KeyListener {
         }
 
         // PLAY STATE
-        if(gp.gameState == gp.playState){
+        else if(gp.gameState == gp.playState){
             if(code == KeyEvent.VK_W){
                 upPressed = true;
             }
@@ -125,6 +125,17 @@ public class KeyHandler implements KeyListener {
         else if(gp.gameState == gp.transitionState){
             if(code == KeyEvent.VK_ENTER){
                 gp.gameState = gp.playState;
+            }
+        }
+
+        // VIDEO STATE
+        else if(gp.gameState == gp.videoState){
+            if(code == KeyEvent.VK_ENTER){
+                gp.ui.sceneNum++;
+                if(gp.ui.sceneNum >= gp.ui.introImage.length){
+                    gp.gameState = gp.playState;
+                    gp.ui.sceneNum = 0;
+                }
             }
         }
     }

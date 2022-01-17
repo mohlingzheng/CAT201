@@ -12,8 +12,8 @@ public class Monster1 extends Entity {
         super(gp);
 
         type = 1;
-        name = "Green Slime";
-        speed = 1;
+        name = "Monster1";
+        speed = 3;
         maxLife = 1;
         life = maxLife;
 
@@ -24,18 +24,14 @@ public class Monster1 extends Entity {
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
-        getImage();
-    }
-
-    public void getImage(){
-        getCharacterImage("monster", "monster", 1);
+        getCharacterImage("monster/monster1", "monster", 1);
     }
 
     public void setAction(){
 
         actionLockCounter ++;
 
-        if(actionLockCounter == 120){
+        if(actionLockCounter == 60){
 
             Random random = new Random();
             int i = random.nextInt(100) + 1;

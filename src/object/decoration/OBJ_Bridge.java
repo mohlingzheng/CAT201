@@ -18,14 +18,12 @@ public class OBJ_Bridge extends Entity {
 
         name = "Bridge";
         direction = "down";
+        imageWidth = gp.tileSize * 5;
+        imageHeight = gp.tileSize * 7;
         down1 = setupScaledImage("/object/bridge");
         up1 = setupScaledImage("/object/xbridge");
         image = up1;
-
-        imageWidth = gp.tileSize * 5;
-        imageHeight = gp.tileSize * 7;
-
-        collision = true;
+        collision = false;
 
         solidArea.x = 0;
         solidArea.y = 0;

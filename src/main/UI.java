@@ -1,8 +1,11 @@
 package main;
 
 import entity.Entity;
+import object.others.OBJ_BlackScreen;
 import object.others.OBJ_Heart;
 import object.obtainable.OBJ_PowerStone;
+import object.story.OBJ_Ending;
+import object.story.OBJ_Intro;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -25,13 +28,31 @@ public class UI {
     public int titleScreenState = 0; // 0 for menu
 
     // Create Mission Window
-    public String missionList[] = new String[3];
+    public String missionList[] = new String[4];
     BufferedImage powerstone_image;
+    public int missionCount = 0;
 
     // If talk to NPC, will continue talking. If interact object, only once.
     public int dialogueType = 0;
     public final int conversationState = 1;
     public final int objInteractionState = 2;
+
+    // CheckPoint Renew
+    public boolean hitCheckPoint = false;
+    public int frameCount = 0;
+
+    // Black Screen Effect
+    BufferedImage blackScreen;
+
+    // Intro Ending Related
+    BufferedImage introImage[] = new BufferedImage[6];
+    BufferedImage endingImage[] = new BufferedImage[6];
+    public int sceneNum = 0;
+    public int sceneMessageNum = 0;
+    String introMessage[][] = new String[6][5];
+    String endingMessage[][] = new String[6][5];
+    public boolean startConv = true;
+    public boolean endConv = false;
 
     public UI(GamePanel gp){
         this.gp = gp;
@@ -56,6 +77,14 @@ public class UI {
         missionList[0] = "Find the pieces in North Cave";
         missionList[1] = "Find the pieces in East Forest";
         missionList[2] = "Find the pieces in South Maze";
+        missionList[3] = "Return to the king";
+
+        // Maze Effect
+        Entity black = new OBJ_BlackScreen(gp);
+        blackScreen = black.image;
+
+        storySetup();
+
     }
 
     public void showMessage(String text){
@@ -76,7 +105,9 @@ public class UI {
         // PLAY STATE
         if(gp.gameState == gp.playState){
             drawMissionListWindow();
+            drawCheckPointMessage();
             drawPlyaerLife();
+            drawDarkRegion();
         }
         // PAUSE STATE
         if(gp.gameState == gp.pauseState){
@@ -92,6 +123,10 @@ public class UI {
         // TRANSITION STATE
         if(gp.gameState == gp.transitionState){
             drawTransitionWindow();
+        }
+        // STORY STATE
+        if(gp.gameState == gp.videoState){
+            drawStoryImage();
         }
     }
     public void drawPlyaerLife(){
@@ -123,6 +158,7 @@ public class UI {
         }
 
     }
+
     public void drawTitleScreen(){
 
         if(titleScreenState == 0){
@@ -214,6 +250,21 @@ public class UI {
 
     }
 
+    public void drawStoryImage(){
+
+        g2.drawImage(introImage[sceneNum], 0, 0, null);
+
+        int x = gp.tileSize * 1 - 19;
+        int y = gp.tileSize * 8 ;
+        drawSubWindow(x, y, gp.tileSize*13 + 37, gp.tileSize*3 + 18);
+
+        x = x + 20;
+        y = y + 35;
+
+        writeCaption(x, y, sceneNum, 0);
+
+    }
+
     public void drawPauseScreen(){
 
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 80F));
@@ -225,6 +276,7 @@ public class UI {
 
         g2.drawString(text, x, y);
     }
+
     public void drawDialogScreen(){
 
         // WINDOW
@@ -234,13 +286,13 @@ public class UI {
         int height = gp.tileSize*4;
         drawSubWindow(x, y, width, height);
 
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 28F));
-        x += gp.tileSize;
-        y += gp.tileSize;
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 24F));
+        x += 20;
+        y += 35;
 
         for(String line : currentDialogue.split("\n")){
             g2.drawString(line,x ,y);
-            y += 40;
+            y += 35;
         }
     }
 
@@ -256,6 +308,7 @@ public class UI {
         g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
     }
 
+    // When entering different Area
     public void drawTransitionWindow(){
         g2.setColor(Color.black);
         g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
@@ -266,8 +319,16 @@ public class UI {
         int x = gp.screenWidth/2 - length/2;
         int y = gp.screenHeight/2;
         g2.drawString(currentDialogue,x ,y);
+
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20F));
+        String anyKey = "Press Enter to continue";
+        length = (int)g2.getFontMetrics().getStringBounds(anyKey, g2).getWidth();
+        x = gp.screenWidth/2 - length/2;
+        y = gp.screenHeight/2 + gp.tileSize;
+        g2.drawString(anyKey,x ,y);
     }
 
+    // Show the mission list
     public void drawMissionListWindow(){
 
         Color myColor = new Color(0, 0, 0, 50);
@@ -279,10 +340,62 @@ public class UI {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 10F));
         g2.setColor(Color.white);
         x = x + gp.tileSize;
-        for(int i = 0; i < 3; i++){
+
+        // No mission completed
+        int i = 0;
+
+        // First mission completed
+        if(missionCount == 1){
+            i = 1;
+        }
+
+        // Second mission completed
+        else if(missionCount == 2){
+            i = 2;
+        }
+        else if(missionCount == 3){
+            i = 3;
+            g2.drawImage(powerstone_image, x- gp.tileSize, y - gp.tileSize/2, null);
+            g2.drawString(missionList[i],x ,y);
+        }
+        for(; i < 3; i++){
             y = y + gp.tileSize/2;
             g2.drawImage(powerstone_image, x- gp.tileSize, y - gp.tileSize/2, null);
             g2.drawString(missionList[i],x ,y);
+        }
+    }
+
+    public void drawCheckPointMessage(){
+
+        if(hitCheckPoint == true){
+            int x = 20;
+            int y = gp.tileSize * 11;
+            int width = gp.tileSize * 2 + 10;
+
+            g2.setColor(Color.black);
+            g2.fillRect(x, y, width, gp.tileSize/2);
+
+            g2.setColor(Color.white);
+            g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20F));
+            x = x + 4;
+            y = y + 17;
+            g2.drawString("CheckPoint",x ,y);
+
+            frameCount++;
+            if(frameCount == 120){
+                hitCheckPoint = false;
+                frameCount = 0;
+            }
+        }
+
+
+    }
+
+    // Low Vision in Maze Mission
+    public void drawDarkRegion(){
+
+        if(gp.eHandler.enterMaze == true){
+            g2.drawImage(blackScreen, 0, 0, null);
         }
     }
 
@@ -292,4 +405,93 @@ public class UI {
         int x = gp.screenWidth/2 - length/2;
         return x;
     }
+
+    public void storySetup(){
+
+        // Story Objects
+        Entity intro = new OBJ_Intro(gp);
+        introImage[0] = intro.image;
+        introImage[1] = intro.image2;
+        introImage[2] = intro.image3;
+        introImage[3] = intro.image4;
+        introImage[4] = intro.image5;
+        introImage[5] = intro.image6;
+        introMessage[0][0] =
+                "Ever since Trevor can remember, his parents were always \n" +
+                "angry at him for tiny matters. He tried to obey all the \n" +
+                "commands from them, but he always feels his parents don’t \n" +
+                "satisfy with him. ";
+
+        introMessage[1][0] =
+                "As he grown up, the quarrels never stop. He didn’t understand \n" +
+                "why his parents have been mean at him, but he never \n" +
+                "communicates with them. One day, they had a huge quarrel.";
+
+        introMessage[2][0] =
+                "He can’t hold it anymore and ran away from home.";
+
+        introMessage[3][0] =
+                "He ran to a park and nobody is around. As he was wandering \n" +
+                "in the park, many conflicts of the past reappeared in his \n" +
+                "memory. He didn’t like being at home and he had no place \n" +
+                "to go.";
+
+        introMessage[4][0] =
+                "Suddenly, he saw a bright circle shows up from a few miles \n" +
+                "away. He has no idea what it is. ";
+
+        introMessage[5][0] =
+                "He was wondering what the bright circle is and starting to \n" +
+                "approach it. Before he could react, he was absorbed by the \n" +
+                "bright light. He felt dizzy and lost the consciousness.";
+
+        Entity ending = new OBJ_Ending(gp);
+        endingImage[0] = ending.image;
+        endingImage[1] = ending.image2;
+        endingImage[2] = ending.image3;
+        endingImage[3] = ending.image4;
+        endingImage[4] = ending.image5;
+        endingImage[5] = ending.image6;
+
+        endingMessage[0][0] =
+                "The monster was defeated, and the kingdom was safe now. The \n" +
+                "whole kingdom was very happy. In order to express the \n" +
+                "gratitude toward Trevor, the king used the Power Stone \n" +
+                "to open the portal. ";
+
+        endingMessage[1][0] =
+                "Through the portal, he traversed back to his world. It was \n" +
+                "evening and he was now ready to go home. He wanted to tell \n" +
+                "them how he felt and apologize to them.";
+
+        endingMessage[2][0] =
+                "On the way back home, he saw his parents are shouting his \n" +
+                "name and looking for him anxiously. He realized his parents \n" +
+                "care for him. He felt guilty for not treating his parents \n" +
+                "well and blessed to have such wonderful parents. ";
+
+        endingMessage[3][0] =
+                "Without a second of hesitation, he ran towards them. It was \n" +
+                "a tear and joy emotion that he could not describe.";
+
+        endingMessage[4][0] =
+                "He apologized to his parents for running off without telling \n" +
+                "anyone, and for his stubbornness along these years. His \n" +
+                "parents also apologized to him for not listening to his \n" +
+                "thought.";
+
+        endingMessage[5][0] =
+                "They smiled happily and go back home together.";
+
+    }
+
+    public void writeCaption(int x, int y, int scene, int num){
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 24F));
+        for(String line : introMessage[scene][num].split("\n")){
+            g2.drawString(line,x ,y);
+            y += 35;
+        }
+    }
+
 }

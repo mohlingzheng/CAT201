@@ -20,11 +20,11 @@ public class OBJ_House extends Entity {
 
         name = "House";
         direction = "down";
-        down1 = setupScaledImage("/object/house");
-        image = down1;
-
         imageWidth = gp.tileSize * 3;
         imageHeight = gp.tileSize * 3;
+
+        down1 = setupScaledImage("/object/house");
+        image = down1;
 
         collision = true;
 

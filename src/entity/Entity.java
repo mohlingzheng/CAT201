@@ -23,7 +23,8 @@ public class Entity {
     public int actionLockCounter = 0;
     String dialogues[] = new String[20];
     public int dialogueIndex = 0;
-    public BufferedImage image, image2, image3;
+    public BufferedImage image = null, image2 = null, image3 = null;
+    public BufferedImage image4  = null, image5  = null, image6  = null;
     public String name;
     public boolean collision = false;
 
@@ -126,16 +127,19 @@ public class Entity {
             }
         }
 
-        spriteCounter++;
-        if(spriteCounter > 12){
-            if(spriteNum == 1){
-                spriteNum = 2;
+        if(type != 5){
+            spriteCounter++;
+            if(spriteCounter > 12){
+                if(spriteNum == 1){
+                    spriteNum = 2;
+                }
+                else if(spriteNum == 2){
+                    spriteNum = 1;
+                }
+                spriteCounter = 0;
             }
-            else if(spriteNum == 2){
-                spriteNum = 1;
-            }
-            spriteCounter = 0;
         }
+
     }
 
     public void updateBullet(int i, int z) {
@@ -310,7 +314,6 @@ public class Entity {
             right1 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
             right2 = setup("/" + characterDirectory + "/" + characterName + "_right_1");
         }
-
 
     }
 

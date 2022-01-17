@@ -38,10 +38,10 @@ public class Player extends Entity{
     }
     public void setDefaultValues(){
 
-        worldX = gp.tileSize * 28;
+        worldX = gp.tileSize * 25;
         worldY = gp.tileSize * 67;
         speed = 8;
-        direction = "down";
+        direction = "left";
 
         // PLAYER STATUS
         maxLife = 6;
@@ -210,19 +210,28 @@ public class Player extends Entity{
             switch (objectName){
                 case "Power Stone":
                     switch (i){
+                        // Get first stone
                         case 9:
-                            gp.progressState = gp.forestState;
+                            gp.progressState = gp.caveOutState;
+                            gp.ui.hitCheckPoint = true;
+                            gp.ui.missionCount = 1;
                             gp.obj[i] = null;
                             gp.npc[5].conversationState = 2;
                             break;
+                        // Get second stone
                         case 10:
-                            gp.progressState = gp.mazeState;
+                            gp.progressState = gp.forestOutState;
+                            gp.ui.hitCheckPoint = true;
+                            gp.ui.missionCount = 2;
                             gp.obj[19].image = gp.obj[19].down1;
                             gp.obj[19].collision = false;
                             gp.npc[6].conversationState = 4;
                             break;
+                        // Get last stone
                         case 11:
-                            gp.progressState = gp.endingState;
+                            gp.progressState = gp.mazeOutState;
+                            gp.ui.hitCheckPoint = true;
+                            gp.ui.missionCount = 3;
                             break;
                     }
                     stoneCount++;
@@ -241,6 +250,11 @@ public class Player extends Entity{
                 gp.ui.dialogueType = gp.ui.conversationState;
                 gp.npc[i].speak();
             }
+        }
+        else if(gp.ui.startConv == true){
+            gp.gameState = gp.dialogState;
+            gp.ui.dialogueType = gp.ui.conversationState;
+            gp.npc[0].speak();
         }
     }
 
@@ -275,22 +289,42 @@ public class Player extends Entity{
         if(gp.progressState == gp.earlyState){
             gp.player.worldX = gp.tileSize * 28;
             gp.player.worldY = gp.tileSize * 67;
+            gp.player.direction = "right";
         }
-        else if(gp.progressState == gp.caveState){
+        else if(gp.progressState == gp.caveInState){
             gp.player.worldX = gp.tileSize * 55;
             gp.player.worldY = gp.tileSize * 66;
+            gp.player.direction = "up";
         }
-        else if(gp.progressState == gp.forestState){
+        else if(gp.progressState == gp.caveOutState){
+            gp.player.worldX = gp.tileSize * 56;
+            gp.player.worldY = gp.tileSize * 27;
+            gp.player.direction = "left";
+        }
+        else if(gp.progressState == gp.forestInState){
             gp.player.worldX = gp.tileSize * 57;
             gp.player.worldY = gp.tileSize * 68;
+            gp.player.direction = "right";
         }
-        else if(gp.progressState == gp.mazeState){
+        else if(gp.progressState == gp.forestOutState){
+            gp.player.worldX = gp.tileSize * 143;
+            gp.player.worldY = gp.tileSize * 51;
+            gp.player.direction = "left";
+        }
+        else if(gp.progressState == gp.mazeInState){
             gp.player.worldX = gp.tileSize * 55;
             gp.player.worldY = gp.tileSize * 70;
+            gp.player.direction = "down";
+        }
+        else if(gp.progressState == gp.mazeOutState){
+            gp.player.worldX = gp.tileSize * 125;
+            gp.player.worldY = gp.tileSize * 115;
+            gp.player.direction = "left";
         }
         else if(gp.progressState == gp.endingState){
             gp.player.worldX = gp.tileSize * 53;
             gp.player.worldY = gp.tileSize * 68;
+            gp.player.direction = "left";
         }
 
         life = maxLife;

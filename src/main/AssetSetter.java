@@ -1,8 +1,6 @@
 package main;
 
-import entity.NPC_King;
-import entity.NPC_Villager;
-import entity.NPC_Worker;
+import entity.*;
 import monster.Bullet;
 import monster.Monster1;
 import monster.Monster2;
@@ -89,11 +87,6 @@ public class AssetSetter {
         gp.obj[11].worldX = gp.tileSize*126;
         gp.obj[11].worldY = gp.tileSize*115;
 
-        gp.obj[12] = new OBJ_PowerStone(gp);
-        gp.obj[12].worldX = gp.tileSize*55;
-        gp.obj[12].worldY = gp.tileSize*71;
-        gp.obj[12].direction = "up";
-
         // Fallen Tree
         gp.obj[13] = new OBJ_Tree(gp);
         gp.obj[13].worldX = gp.tileSize*64;
@@ -131,13 +124,13 @@ public class AssetSetter {
     public void setNPC(){
 
         gp.npc[0] = new NPC_King(gp);
-        gp.npc[0].worldX = gp.tileSize * 50;
-        gp.npc[0].worldY = gp.tileSize * 70;
+        gp.npc[0].worldX = gp.tileSize * 24;
+        gp.npc[0].worldY = gp.tileSize * 67;
         gp.npc[0].conversationState = 0;
 
         gp.npc[1] = new NPC_Villager(gp);
-        gp.npc[1].worldX = gp.tileSize * 24;
-        gp.npc[1].worldY = gp.tileSize * 66;
+        gp.npc[1].worldX = gp.tileSize * 27;
+        gp.npc[1].worldY = gp.tileSize * 75;
         gp.npc[1].conversationState = 1;
 
         gp.npc[2] = new NPC_Villager(gp);
@@ -166,6 +159,23 @@ public class AssetSetter {
         gp.npc[6].worldX = gp.tileSize * 55;
         gp.npc[6].worldY = gp.tileSize * 75;
         gp.npc[6].conversationState = 3;
+
+        // Missing Kid
+        gp.npc[7] = new NPC_Kid(gp);
+        gp.npc[7].worldX = gp.tileSize * 45;
+        gp.npc[7].worldY = gp.tileSize * 31;
+        gp.npc[7].conversationState = 1;
+
+        // Mother
+        gp.npc[8] = new NPC_Mother(gp);
+        gp.npc[8].worldX = gp.tileSize * 55;
+        gp.npc[8].worldY = gp.tileSize * 48;
+        gp.npc[8].conversationState = 0;
+
+        // Forest Old Man
+        gp.npc[9] = new NPC_Oldman(gp);
+        gp.npc[9].worldX = gp.tileSize * 76;
+        gp.npc[9].worldY = gp.tileSize * 69;
 
     }
 
@@ -290,46 +300,79 @@ public class AssetSetter {
 
         bullettimecount++;
 
-        if(bullettimecount == 90){
+        if(j >= 19) {
+            j = 0;
+        }
+        if(bullettimecount < numMonster2[0]){
+            gp.bullet[bullettimecount][j] = new Bullet(gp);
+            gp.bullet[bullettimecount][j].worldX = gp.tileSize*numbering[bullettimecount][0];
+            gp.bullet[bullettimecount][j].worldY = gp.tileSize*numbering[bullettimecount][1] - gp.tileSize;
+            gp.bullet[bullettimecount][j].direction = "up";
+        }
+        else if(bullettimecount < numMonster2[1]){
+            gp.bullet[bullettimecount][j] = new Bullet(gp);
+            gp.bullet[bullettimecount][j].worldX = gp.tileSize*numbering[bullettimecount][0];
+            gp.bullet[bullettimecount][j].worldY = gp.tileSize*numbering[bullettimecount][1] + gp.tileSize;
+            gp.bullet[bullettimecount][j].direction = "down";
+        }
+        else if(bullettimecount < numMonster2[2]){
+            gp.bullet[bullettimecount][j] = new Bullet(gp);
+            gp.bullet[bullettimecount][j].worldX = gp.tileSize*numbering[bullettimecount][0] - gp.tileSize;
+            gp.bullet[bullettimecount][j].worldY = gp.tileSize*numbering[bullettimecount][1];
+            gp.bullet[bullettimecount][j].direction = "left";
+        }
+        else if(bullettimecount < numMonster2[3]){
+            gp.bullet[bullettimecount][j] = new Bullet(gp);
+            gp.bullet[bullettimecount][j].worldX = gp.tileSize*numbering[bullettimecount][0] + gp.tileSize;
+            gp.bullet[bullettimecount][j].worldY = gp.tileSize*numbering[bullettimecount][1];
+            gp.bullet[bullettimecount][j].direction = "right";
+        }
+        else if(bullettimecount == 60){
             bullettimecount = 0;
-            if(j >= 19) {
-                j = 0;
-            }
-
-            // For Up, i from 0 to 5
-            for(int i = 0; i < numMonster2[0]; i++){
-                gp.bullet[i][j] = new Bullet(gp);
-                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0];
-                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1] - gp.tileSize;
-                gp.bullet[i][j].direction = "up";
-            }
-
-            // For Up, i from 6 to 13
-            for(int i = 6; i < numMonster2[1]; i++){
-                gp.bullet[i][j] = new Bullet(gp);
-                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0];
-                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1] + gp.tileSize;
-                gp.bullet[i][j].direction = "down";
-            }
-
-            // For Up, i from 14 to 21
-            for(int i = 14; i < numMonster2[2]; i++){
-                gp.bullet[i][j] = new Bullet(gp);
-                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0] - gp.tileSize;
-                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1];
-                gp.bullet[i][j].direction = "left";
-            }
-
-            // For Up, i from 22 to 26
-            for(int i = 22; i < numMonster2[3]; i++){
-                gp.bullet[i][j] = new Bullet(gp);
-                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0] + gp.tileSize;
-                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1];
-                gp.bullet[i][j].direction = "right";
-            }
-
             j++;
         }
+
+
+//        if(bullettimecount == 90){
+//            bullettimecount = 0;
+//            if(j >= 19) {
+//                j = 0;
+//            }
+//
+//            // For Up, i from 0 to 5
+//            for(int i = 0; i < numMonster2[0]; i++){
+//                gp.bullet[i][j] = new Bullet(gp);
+//                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0];
+//                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1] - gp.tileSize;
+//                gp.bullet[i][j].direction = "up";
+//            }
+//
+//            // For Up, i from 6 to 13
+//            for(int i = 6; i < numMonster2[1]; i++){
+//                gp.bullet[i][j] = new Bullet(gp);
+//                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0];
+//                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1] + gp.tileSize;
+//                gp.bullet[i][j].direction = "down";
+//            }
+//
+//            // For Up, i from 14 to 21
+//            for(int i = 14; i < numMonster2[2]; i++){
+//                gp.bullet[i][j] = new Bullet(gp);
+//                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0] - gp.tileSize;
+//                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1];
+//                gp.bullet[i][j].direction = "left";
+//            }
+//
+//            // For Up, i from 22 to 26
+//            for(int i = 22; i < numMonster2[3]; i++){
+//                gp.bullet[i][j] = new Bullet(gp);
+//                gp.bullet[i][j].worldX = gp.tileSize*numbering[i][0] + gp.tileSize;
+//                gp.bullet[i][j].worldY = gp.tileSize*numbering[i][1];
+//                gp.bullet[i][j].direction = "right";
+//            }
+//
+//            j++;
+//        }
 
     }
 

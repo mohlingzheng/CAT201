@@ -10,6 +10,8 @@ public class EventHandler {
     public boolean slipperyEvent = false;
     public boolean[] doorCondition = new boolean[5];
 
+    public boolean enterMaze = false;
+
     public EventHandler(GamePanel gp){
 
         this.gp = gp;
@@ -98,7 +100,7 @@ public class EventHandler {
         }
 
         // Forest Enter And Exit
-        if(hit(84, 68, "any") == true){
+        if(hit(80, 68, "any") == true){
             gp.gameState = gameState;
             gp.ui.currentDialogue = "You enter the forest!";
             gp.player.worldX = gp.tileSize * 89;
@@ -107,34 +109,58 @@ public class EventHandler {
         if(hit(88, 35, "any") == true){
             gp.gameState = gameState;
             gp.ui.currentDialogue = "You leave the forest!";
-            gp.player.worldX = gp.tileSize * 83;
+            gp.player.worldX = gp.tileSize * 79;
             gp.player.worldY = gp.tileSize * 68;
         }
 
         // Maze Enter And Exit
-        if(hit(55, 91, "any") == true){
+        if(hit(55, 92, "any") == true){
             gp.gameState = gameState;
             gp.ui.currentDialogue = "You enter the maze!";
             gp.player.worldX = gp.tileSize * 110;
             gp.player.worldY = gp.tileSize * 92;
+            enterMaze = true;
         }
         if(hit(110, 91, "any") == true){
             gp.gameState = gameState;
-            gp.ui.currentDialogue = "You leave the forest!";
+            gp.ui.currentDialogue = "You leave the maze!";
             gp.player.worldX = gp.tileSize * 55;
-            gp.player.worldY = gp.tileSize * 92;
+            gp.player.worldY = gp.tileSize * 91;
+            enterMaze = false;
         }
     }
 
     public void checkPoint(){
 
-        if(gp.progressState != 0){
-            return;
-        }
-        else{
+        if(gp.progressState == gp.earlyState){
             for(int i = 53; i < 58; i++){
                 if(hit(i, 65, "any")){
-                    gp.progressState = gp.caveState;
+                    gp.progressState = gp.caveInState;
+                    gp.ui.hitCheckPoint = true;
+                }
+            }
+        }
+        else if(gp.progressState == gp.caveOutState){
+            for(int i = 53; i < 58; i++){
+                if(hit(i, 65, "any")){
+                    gp.progressState = gp.forestInState;
+                    gp.ui.hitCheckPoint = true;
+                }
+            }
+        }
+        else if(gp.progressState == gp.forestOutState){
+            for(int i = 66; i < 71; i++){
+                if(hit(59, i, "any")){
+                    gp.progressState = gp.mazeInState;
+                    gp.ui.hitCheckPoint = true;
+                }
+            }
+        }
+        else if(gp.progressState == gp.mazeOutState){
+            for(int i = 66; i < 71; i++){
+                if(hit(52, i, "any")){
+                    gp.progressState = gp.endingState;
+                    gp.ui.hitCheckPoint = true;
                 }
             }
         }
@@ -145,7 +171,7 @@ public class EventHandler {
         for(int row = 18; row < 28; row++){
             for(int col = 24; col < 38; col++){
                 // Need to change mapTileNum accordingly
-                if(hit(col, row, "any") && gp.tileM.mapTileNum[col][row] == 104){
+                if(hit(col, row, "any") && gp.tileM.mapTileNum[col][row] == 137){
                     slipperyEvent = true;
                     canTouchEvent = true;
                 }

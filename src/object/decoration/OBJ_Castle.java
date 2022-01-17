@@ -18,18 +18,18 @@ public class OBJ_Castle extends Entity {
 
         name = "Castle";
         direction = "down";
+        imageWidth = gp.tileSize * 6;
+        imageHeight = gp.tileSize * 6;
+
         down1 = setupScaledImage("/object/castle");
         image = down1;
-
-        imageWidth = gp.tileSize * 5;
-        imageHeight = gp.tileSize * 5;
 
         collision = true;
 
         solidArea.x = 0;
         solidArea.y = 0;
-        solidArea.width = gp.tileSize * 5;
-        solidArea.height = gp.tileSize * 5;
+        solidArea.width = gp.tileSize * 6;
+        solidArea.height = gp.tileSize * 6;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
     }
