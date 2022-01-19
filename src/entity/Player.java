@@ -55,7 +55,7 @@ public class Player extends Entity{
         }
         // Player is moving normally
         else if(keyH.upPressed == true || keyH.downPressed == true
-                || keyH.leftPressed == true || keyH.rightPressed == true ){
+                || keyH.leftPressed == true || keyH.rightPressed == true || keyH.enterPressed == true){
             normalUpdate();
         }
         // Player is standing still
@@ -78,7 +78,10 @@ public class Player extends Entity{
 
     public void normalUpdate(){
 
-        if(keyH.upPressed == true){
+        if(keyH.enterPressed == true){
+
+        }
+        else if(keyH.upPressed == true){
             direction = "up";
         }
         else if(keyH.downPressed == true){

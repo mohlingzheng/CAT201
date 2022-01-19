@@ -63,6 +63,8 @@ public class GamePanel extends JPanel implements Runnable{
     public final int dialogState = 3;
     public final int transitionState = 4;
     public final int videoState = 5;
+    public final int talkState = 6;
+    public final int popOutState = 7;
 
     // PROGRESS STATE
     public int progressState = 0;
@@ -179,12 +181,28 @@ public class GamePanel extends JPanel implements Runnable{
 
         }
 
-        if(gameState == dialogState){
+        else if(gameState == dialogState){
 
         }
 
-        if(gameState == pauseState){
+        else if(gameState == pauseState){
 
+        }
+
+        // TALK STATE
+        else if(gameState == talkState){
+            // Intro Talking Scene
+            if(npc[0].standStill == false){
+                npc[0].setAction();
+            }
+            else if(ui.endConv == true){
+                if(bullet[27][0] != null){
+                    bullet[27][0].setAction();
+                    if(bullet[27][0].worldX == tileSize * 35){
+                        bullet[27][0] = null;
+                    }
+                }
+            }
         }
 
     }

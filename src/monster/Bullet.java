@@ -31,59 +31,13 @@ public class Bullet extends Entity {
         getCharacterImage("monster/bullet", "bullet", 2);
     }
 
-    public void getImage(){
-
-        up1 = setup("/monster/bullet/bullet_up");
-        up2 = setup("/monster/bullet_up");
-        down1 = setup("/monster/bullet_down");
-        down2 = setup("/monster/bullet_down");
-        left1 = setup("/monster/bullet_left");
-        left2 = setup("/monster/bullet_left");
-        right1 = setup("/monster/bullet_right");
-        right2 = setup("/monster/bullet_right");
-
+    // For Ending
+    public void setAction(){
+        if(gp.ui.endConv == true){
+            direction = "right";
+            worldX += speed;
+        }
     }
-
-//    public void updateBullet(int i, int z) {
-//
-//        collisionOn = false;
-//        gp.cChecker.checkTile(this);
-//        gp.cChecker.checkObject(this, false);
-//        gp.cChecker.checkEntity(this, gp.npc);
-//        gp.cChecker.checkEntity(this, gp.monster1);
-//        gp.cChecker.checkEntity(this, gp.monster2);
-//
-//        boolean contactPlayer = gp.cChecker.checkPlayer(this);
-//
-//        if(this.type == 3 && contactPlayer == true) {
-//            if(gp.player.invincible == false) {
-//
-//                gp.player.life -= 1;
-//                gp.player.invincible = true;
-//                if(gp.bullet[i][z] != null) {
-//                    gp.bullet[i][z] = null;
-//                }
-//            }
-//        }
-//
-//        if(collisionOn == false) {
-//
-//            switch (direction){
-//                case "up":
-//                    worldY -= speed;
-//                    break;
-//                case "down":
-//                    worldY += speed;
-//                    break;
-//                case "left":
-//                    worldX -= speed;
-//                    break;
-//                case "right":
-//                    worldX += speed;
-//                    break;
-//            }
-//        }
-//    }
 
     public void draw(Graphics2D g2){
 

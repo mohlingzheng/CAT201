@@ -21,7 +21,7 @@ public class Entity {
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
     public int actionLockCounter = 0;
-    String dialogues[] = new String[20];
+    public String dialogues[] = new String[20];
     public int dialogueIndex = 0;
     public BufferedImage image = null, image2 = null, image3 = null;
     public BufferedImage image4  = null, image5  = null, image6  = null;
@@ -45,6 +45,9 @@ public class Entity {
     // IMAGE SCALE
     public int imageWidth;
     public int imageHeight;
+
+    // TALK STATE
+    public boolean standStill = false;
 
     public Entity(GamePanel gp){
         this.gp = gp;
@@ -232,8 +235,8 @@ public class Entity {
             }
             g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
         }
-        g2.setColor(Color.red);
-        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+//        g2.setColor(Color.red);
+//        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
     }
 
     public BufferedImage setup(String imagePath){

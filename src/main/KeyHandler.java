@@ -101,6 +101,9 @@ public class KeyHandler implements KeyListener {
             if(code == KeyEvent.VK_ENTER){
                 enterPressed = true;
             }
+            if(code == KeyEvent.VK_C){
+                gp.player.stoneCount = 3;
+            }
         }
         // PAUSE STATE
         else if(gp.gameState == gp.pauseState){
@@ -111,6 +114,7 @@ public class KeyHandler implements KeyListener {
 
         // DIALOGUE STATE
         else if(gp.gameState == gp.dialogState){
+            // Normal condition
             if(code == KeyEvent.VK_ENTER){
                 if(gp.ui.dialogueType == gp.ui.conversationState){
                     gp.player.npcIndex = gp.cChecker.checkEntity(gp.player, gp.npc);
@@ -130,14 +134,104 @@ public class KeyHandler implements KeyListener {
 
         // VIDEO STATE
         else if(gp.gameState == gp.videoState){
-            if(code == KeyEvent.VK_ENTER){
-                gp.ui.sceneNum++;
-                if(gp.ui.sceneNum >= gp.ui.introImage.length){
-                    gp.gameState = gp.playState;
-                    gp.ui.sceneNum = 0;
+            if(gp.ui.introOrEnding == 1){
+                if(code == KeyEvent.VK_ENTER){
+                    gp.ui.sceneNum++;
+                    if(gp.ui.sceneNum >= gp.ui.introImage.length){
+                        gp.gameState = gp.talkState;
+                        gp.ui.sceneNum = 0;
+                    }
+                }
+            }
+            else if(gp.ui.introOrEnding == 2){
+                if(gp.ui.fadeType == 3){
+                    if(code == KeyEvent.VK_ENTER){
+                        gp.ui.sceneNum++;
+                        if(gp.ui.sceneNum >= gp.ui.endingImage.length){
+                            gp.ui.fadeType = 4;
+                        }
+                    }
+                }
+                else if(gp.ui.fadeType == 4){
+                    if(code == KeyEvent.VK_ENTER){
+                        gp.gameState = gp.titleState;
+                    }
+                }
+            }
+
+        }
+
+        // TALK STATE
+        else if(gp.gameState == gp.talkState){
+            if(gp.npc[0].standStill == true && gp.ui.startConv == true){
+                if(code == KeyEvent.VK_ENTER){
+                    gp.ui.introConvNumber++;
+                    if(gp.ui.introConvNumber >= gp.ui.introConversation.length){
+                        gp.ui.introConvNumber = 0;
+                        gp.ui.startConv = false;
+                        gp.gameState = gp.playState;
+                    }
+
+                }
+            }
+            else if(gp.ui.fadeType == 3 && gp.npc[0].standStill == true){
+                if(code == KeyEvent.VK_ENTER){
+                    gp.ui.endingConvNumber++;
+                    if(gp.ui.endingConvNumber >= gp.ui.endingConversation.length){
+                        gp.ui.endingConvNumber = 0;
+                        gp.ui.endConv = false;
+                        gp.ui.fadeType = 1;
+                        gp.gameState = gp.videoState;
+                    }
+                    // Show Monster
+                    else if(gp.ui.endingConvNumber == 3){
+                        gp.obj[26].worldX = gp.tileSize*34;
+                        gp.obj[26].worldY = gp.tileSize*66;
+                        gp.npc[1].direction = "right";
+                        gp.npc[2].direction = "right";
+                        gp.npc[6].direction = "right";
+                        gp.npc[7].direction = "right";
+                        gp.npc[8].direction = "right";
+
+                    }
+                    // Player turn
+                    else if(gp.ui.endingConvNumber == 4){
+                        gp.player.direction = "right";
+                        gp.npc[1].direction = "down";
+                        gp.npc[2].direction = "up";
+                        gp.npc[6].direction = "down";
+                        gp.npc[7].direction = "up";
+                        gp.npc[8].direction = "up";
+                    }
+                    // Power Stone bullet
+                    else if(gp.ui.endingConvNumber == 5){
+                        gp.aSetter.powerstoneBullet();
+                    }
+                    else if(gp.ui.endingConvNumber == 7){
+                        gp.obj[26].worldX = gp.tileSize*1;
+                        gp.obj[26].worldY = gp.tileSize*1;
+                        gp.obj[26] = null;
+                    }
+                    else if(gp.ui.endingConvNumber == 8){
+                        gp.player.direction = "left";
+                    }
                 }
             }
         }
+
+        // POP OUT STATE
+        else if(gp.gameState == gp.popOutState){
+            if(code == KeyEvent.VK_ENTER){
+                if(gp.ui.popOutMessageType == 0){
+                    gp.ui.popOutMessageType = 1;
+                }
+                else if(gp.ui.popOutMessageType == 1){
+                    gp.gameState = gp.playState;
+                    gp.ui.popOutMessageType = 0;
+                }
+            }
+        }
+
     }
 
     @Override

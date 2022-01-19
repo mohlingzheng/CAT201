@@ -50,11 +50,14 @@ public class EventHandler {
         }
 
         if(canTouchEvent == true){
-            enterExitCave(gp.transitionState);
+            enterExitArea(gp.transitionState);
             checkSlipperyTile();
             checkNonSlipperyTile();
             buttonTrigger(gp.dialogState);
             checkPoint();
+            kidTransfer();
+            skeletonMessage();
+            setEndingConv();
         }
     }
 
@@ -83,7 +86,7 @@ public class EventHandler {
         return hit;
     }
 
-    public void enterExitCave(int gameState){
+    public void enterExitArea(int gameState){
 
         // Cave Enter And Exit
         if(hit(55, 44, "any") == true){
@@ -132,6 +135,7 @@ public class EventHandler {
 
     public void checkPoint(){
 
+        // Start game, before enter cave
         if(gp.progressState == gp.earlyState){
             for(int i = 53; i < 58; i++){
                 if(hit(i, 65, "any")){
@@ -140,22 +144,25 @@ public class EventHandler {
                 }
             }
         }
+        // After cave, before enter forest
         else if(gp.progressState == gp.caveOutState){
-            for(int i = 53; i < 58; i++){
-                if(hit(i, 65, "any")){
+            for(int i = 66; i < 71; i++){
+                if(hit(58, i, "any")){
                     gp.progressState = gp.forestInState;
                     gp.ui.hitCheckPoint = true;
                 }
             }
         }
+        // After forest, before enter maze
         else if(gp.progressState == gp.forestOutState){
-            for(int i = 66; i < 71; i++){
-                if(hit(59, i, "any")){
+            for(int i = 53; i < 58; i++){
+                if(hit(i, 71, "any")){
                     gp.progressState = gp.mazeInState;
                     gp.ui.hitCheckPoint = true;
                 }
             }
         }
+        // After maze, back to town
         else if(gp.progressState == gp.mazeOutState){
             for(int i = 66; i < 71; i++){
                 if(hit(52, i, "any")){
@@ -259,5 +266,71 @@ public class EventHandler {
         }
     }
 
+    // Cave Kid to Mother
+    public void kidTransfer(){
+        if(gp.npc[7].speed == 2 && hit(47, 31, "any")){
+            gp.npc[7].worldX = gp.tileSize * 56;
+            gp.npc[7].worldY = gp.tileSize * 48;
+            gp.npc[8].conversationState = 1;
+            gp.npc[7].conversationState = 1;
+            gp.npc[7].speed = 3;
+            gp.npc[7].direction = "left";
+            gp.npc[8].direction = "right";
+        }
+    }
+
+    // Pop Out Interaction
+    public void skeletonMessage(){
+
+        if(hit(98,101,"any") == true){  //gp.obj[20]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 20;
+                gp.gameState = gp.popOutState;
+            }
+        }
+        else if(hit(101,110,"any") == true){    //gp.obj[21]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 21;
+                gp.gameState = gp.popOutState;
+            }
+        }
+        else if(hit(110,118,"any") == true){    //gp.obj[22]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 22;
+                gp.gameState = gp.popOutState;
+            }
+        }
+        else if(hit(112,104,"any") == true){    //gp.obj[23]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 23;
+                gp.gameState = gp.popOutState;
+            }
+        }
+        else if(hit(114,121,"any") == true){    //gp.obj[24]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 24;
+                gp.gameState = gp.popOutState;
+            }
+        }
+        else if(hit(122,98,"any") == true){     //gp.obj[25]
+            if(gp.keyH.enterPressed == true){
+                gp.ui.popOutMessageNum = 25;
+                gp.gameState = gp.popOutState;
+            }
+        }
+    }
+
+    // Ending Speech Check
+    public void setEndingConv(){
+        for(int i = 66; i < 71; i++){
+            if(hit(38, i, "any") == true && gp.player.stoneCount == 3){
+                gp.ui.fadeType = 1;
+                gp.ui.endConv = true;
+                gp.ui.introOrEnding = 2;
+                gp.gameState = gp.talkState;
+            }
+        }
+
+    }
 
 }

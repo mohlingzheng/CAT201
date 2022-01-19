@@ -22,7 +22,7 @@ public class OBJ_Tree extends Entity {
         imageWidth = gp.tileSize * 3;
         imageHeight = gp.tileSize * 5;
 
-        down1 = setupScaledImage("/object/tree123");
+        down1 = setupScaledImage("/object/xtree");
         image = down1;
 
         collision = true;
@@ -41,10 +41,10 @@ public class OBJ_Tree extends Entity {
         int screenX = worldX - gp2.player.worldX + gp2.player.screenX;
         int screenY = worldY - gp2.player.worldY + gp2.player.screenY;
 
-        if(worldX + gp2.tileSize > gp2.player.worldX - gp2.player.screenX &&
-                worldX - gp2.tileSize < gp2.player.worldX + gp2.player.screenX &&
-                worldY + gp2.tileSize > gp2.player.worldY - gp2.player.screenY &&
-                worldY - gp2.tileSize < gp2.player.worldY + gp2.player.screenY){
+        if(worldX + gp2.tileSize * 8 > gp2.player.worldX - gp2.player.screenX &&
+                worldX - gp2.tileSize * 8 < gp2.player.worldX + gp2.player.screenX &&
+                worldY + gp2.tileSize * 8 > gp2.player.worldY - gp2.player.screenY &&
+                worldY - gp2.tileSize * 8 < gp2.player.worldY + gp2.player.screenY){
 
             g2.drawImage(image, screenX, screenY, imageWidth, imageHeight, null);
         }

@@ -107,6 +107,7 @@ public class CollisionChecker {
 
         return index;
     }
+
     // NPC OR MONSTER COLLISION
     public int checkEntity(Entity entity, Entity[] target){
         int index = 999;
@@ -152,6 +153,7 @@ public class CollisionChecker {
         return index;
     }
 
+    // Check Collision between any and bullet
     public int checkBullet(Entity entity, Entity[][] target, int row, int col){
 
         gp.indexI = 999;

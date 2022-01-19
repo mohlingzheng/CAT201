@@ -4,6 +4,8 @@ import entity.*;
 import monster.Bullet;
 import monster.Monster1;
 import monster.Monster2;
+import object.obtainable.OBJ_Skeleton;
+import object.others.OBJ_Bigmonster;
 import object.others.OBJ_Door;
 import object.others.OBJ_Key;
 import object.decoration.OBJ_Bridge;
@@ -118,13 +120,41 @@ public class AssetSetter {
         gp.obj[19].worldX = gp.tileSize*53;
         gp.obj[19].worldY = gp.tileSize*78;
 
+        // Skeleton in Maze
+        gp.obj[20] = new OBJ_Skeleton(gp);
+        gp.obj[20].worldX = gp.tileSize*98;
+        gp.obj[20].worldY = gp.tileSize*101;
+
+        gp.obj[21] = new OBJ_Skeleton(gp);
+        gp.obj[21].worldX = gp.tileSize*101;
+        gp.obj[21].worldY = gp.tileSize*110;
+
+        gp.obj[22] = new OBJ_Skeleton(gp);
+        gp.obj[22].worldX = gp.tileSize*110;
+        gp.obj[22].worldY = gp.tileSize*118;
+
+        gp.obj[23] = new OBJ_Skeleton(gp);
+        gp.obj[23].worldX = gp.tileSize*112;
+        gp.obj[23].worldY = gp.tileSize*104;
+
+        gp.obj[24] = new OBJ_Skeleton(gp);
+        gp.obj[24].worldX = gp.tileSize*114;
+        gp.obj[24].worldY = gp.tileSize*121;
+
+        gp.obj[25] = new OBJ_Skeleton(gp);
+        gp.obj[25].worldX = gp.tileSize*122;
+        gp.obj[25].worldY = gp.tileSize*98;
+
+        gp.obj[26] = new OBJ_Bigmonster(gp);
+        gp.obj[26].worldX = gp.tileSize*1;
+        gp.obj[26].worldY = gp.tileSize*1;
 
     }
 
     public void setNPC(){
 
         gp.npc[0] = new NPC_King(gp);
-        gp.npc[0].worldX = gp.tileSize * 24;
+        gp.npc[0].worldX = gp.tileSize * 21;
         gp.npc[0].worldY = gp.tileSize * 67;
         gp.npc[0].conversationState = 0;
 
@@ -164,7 +194,7 @@ public class AssetSetter {
         gp.npc[7] = new NPC_Kid(gp);
         gp.npc[7].worldX = gp.tileSize * 45;
         gp.npc[7].worldY = gp.tileSize * 31;
-        gp.npc[7].conversationState = 1;
+        gp.npc[7].conversationState = 0;
 
         // Mother
         gp.npc[8] = new NPC_Mother(gp);
@@ -386,6 +416,49 @@ public class AssetSetter {
             gp.obj[num].worldX = gp.tileSize*0;
             gp.obj[num].worldY = gp.tileSize*0;
         }
+    }
+
+    public void endingSceneLocationSet(){
+        // King
+        gp.npc[0].worldX = gp.tileSize * 26;
+        gp.npc[0].worldY = gp.tileSize * 68;
+        gp.npc[0].direction = "right";
+
+        // Player
+        gp.player.worldX = gp.tileSize * 30;
+        gp.player.worldY = gp.tileSize * 68;
+        gp.player.direction = "left";
+
+        // Villager
+        gp.npc[1].worldX = gp.tileSize * 31;
+        gp.npc[1].worldY = gp.tileSize * 65;
+        gp.npc[1].direction = "down";
+
+        // Villager
+        gp.npc[2].worldX = gp.tileSize * 30;
+        gp.npc[2].worldY = gp.tileSize * 70;
+        gp.npc[2].direction = "up";
+
+        // Worker
+        gp.npc[6].worldX = gp.tileSize * 29;
+        gp.npc[6].worldY = gp.tileSize * 66;
+        gp.npc[6].direction = "down";
+
+        // Missing Kid
+        gp.npc[7].worldX = gp.tileSize * 28;
+        gp.npc[7].worldY = gp.tileSize * 71;
+        gp.npc[7].direction = "right";
+
+        // Mother
+        gp.npc[8].worldX = gp.tileSize * 28;
+        gp.npc[8].worldY = gp.tileSize * 70;
+        gp.npc[8].direction = "right";
+    }
+
+    public void powerstoneBullet(){
+        gp.bullet[27][0] = new Bullet(gp);
+        gp.bullet[27][0].worldX = gp.tileSize * 31;
+        gp.bullet[27][0].worldY = gp.tileSize * 68;
     }
 
 }
