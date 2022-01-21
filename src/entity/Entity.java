@@ -163,6 +163,7 @@ public class Entity {
 
                 gp.player.life -= 1;
                 gp.player.invincible = true;
+                gp.playSE(3);
                 if(gp.bullet[i][z] != null) {
                     gp.bullet[i][z] = null;
                 }

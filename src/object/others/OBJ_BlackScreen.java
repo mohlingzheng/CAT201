@@ -20,6 +20,7 @@ public class OBJ_BlackScreen extends Entity {
         imageWidth = gp.screenWidth + gp.tileSize;
         imageHeight = gp.screenHeight + gp.tileSize;
         image = setupScaledImage("/object/blackscreen");
+        image2 = setupScaledImage("/object/control");
 
     }
 

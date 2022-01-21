@@ -237,6 +237,7 @@ public class EventHandler {
     // Cave Mission_2
     public void doorSwitch(int col, int row, int gameState){
         if(gp.keyH.enterPressed == true){
+            gp.playSE(2);
             int door1 = 0, door2 = 0;
             int doorCol1 = 0, doorRow1 = 0;
             int doorCol2 = 0, doorRow2 = 0;

@@ -102,6 +102,7 @@ public class GamePanel extends JPanel implements Runnable{
 
         gameThread = new Thread(this);
         gameThread.start();
+        playMusic(0);
     }
 
     @Override

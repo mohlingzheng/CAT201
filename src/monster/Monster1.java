@@ -13,7 +13,7 @@ public class Monster1 extends Entity {
 
         type = 1;
         name = "Monster1";
-        speed = 3;
+        speed = 2;
         maxLife = 1;
         life = maxLife;
 
@@ -31,7 +31,7 @@ public class Monster1 extends Entity {
 
         actionLockCounter ++;
 
-        if(actionLockCounter == 60){
+        if(actionLockCounter == 90){
 
             Random random = new Random();
             int i = random.nextInt(100) + 1;

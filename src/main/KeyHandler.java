@@ -41,7 +41,7 @@ public class KeyHandler implements KeyListener {
                 }
                 if(code == KeyEvent.VK_ENTER){
                     if(gp.ui.commandNum == 0){
-                        gp.gameState = gp.videoState;
+                        gp.ui.titleScreenState = 1;
                     }
                     if(gp.ui.commandNum == 1){
                         System.exit(0);
@@ -49,34 +49,8 @@ public class KeyHandler implements KeyListener {
                 }
             }
             else if(gp.ui.titleScreenState == 1){
-                if(code == KeyEvent.VK_W){
-                    gp.ui.commandNum--;
-                    if(gp.ui.commandNum < 0){
-                        gp.ui.commandNum = 3;
-                    }
-                }
-                if(code == KeyEvent.VK_S){
-                    gp.ui.commandNum++;
-                    if(gp.ui.commandNum > 3){
-                        gp.ui.commandNum = 0;
-                    }
-                }
                 if(code == KeyEvent.VK_ENTER){
-                    if(gp.ui.commandNum == 0){
-                        gp.gameState = gp.playState;
-                        //gp.playMusic(0);
-                    }
-                    if(gp.ui.commandNum == 1){
-                        gp.gameState = gp.playState;
-                        //gp.playMusic(0);
-                    }
-                    if(gp.ui.commandNum == 2){
-                        gp.gameState = gp.playState;
-                        //gp.playMusic(0);
-                    }
-                    if(gp.ui.commandNum == 3){
-                        gp.ui.titleScreenState = 0;
-                    }
+                    gp.gameState = gp.videoState;
                 }
             }
         }
@@ -155,6 +129,7 @@ public class KeyHandler implements KeyListener {
                 else if(gp.ui.fadeType == 4){
                     if(code == KeyEvent.VK_ENTER){
                         gp.gameState = gp.titleState;
+                        System.exit(0);
                     }
                 }
             }
@@ -206,12 +181,15 @@ public class KeyHandler implements KeyListener {
                     // Power Stone bullet
                     else if(gp.ui.endingConvNumber == 5){
                         gp.aSetter.powerstoneBullet();
+                        gp.playSE(3);
                     }
+                    // Remove Monster
                     else if(gp.ui.endingConvNumber == 7){
                         gp.obj[26].worldX = gp.tileSize*1;
                         gp.obj[26].worldY = gp.tileSize*1;
                         gp.obj[26] = null;
                     }
+                    // Turn back to King
                     else if(gp.ui.endingConvNumber == 8){
                         gp.player.direction = "left";
                     }

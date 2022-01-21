@@ -207,6 +207,24 @@ public class AssetSetter {
         gp.npc[9].worldX = gp.tileSize * 76;
         gp.npc[9].worldY = gp.tileSize * 69;
 
+        // Sign Board Cave
+        gp.npc[10] = new NPC_OBJ_Signboard(gp);
+        gp.npc[10].worldX = gp.tileSize * 54;
+        gp.npc[10].worldY = gp.tileSize * 46;
+        gp.npc[10].conversationState = 1;
+
+        // Sign Board Forest
+        gp.npc[11] = new NPC_OBJ_Signboard(gp);
+        gp.npc[11].worldX = gp.tileSize * 78;
+        gp.npc[11].worldY = gp.tileSize * 70;
+        gp.npc[11].conversationState = 2;
+
+        // Sign Board Maze
+        gp.npc[12] = new NPC_OBJ_Signboard(gp);
+        gp.npc[12].worldX = gp.tileSize * 54;
+        gp.npc[12].worldY = gp.tileSize * 88;
+        gp.npc[12].conversationState = 3;
+
     }
 
     public void setMonster1(){
@@ -453,6 +471,8 @@ public class AssetSetter {
         gp.npc[8].worldX = gp.tileSize * 28;
         gp.npc[8].worldY = gp.tileSize * 70;
         gp.npc[8].direction = "right";
+
+
     }
 
     public void powerstoneBullet(){

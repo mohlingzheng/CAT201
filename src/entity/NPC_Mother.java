@@ -17,11 +17,16 @@ public class NPC_Mother extends Entity{
     public void setDialogue(){
 
         if(conversationState == 0){
-            dialogues[0] = "Traveler, please help me! ";
-            dialogues[1] = "My son ran into the cave because I got \nmad at him.";
-            dialogues[2] = "I tried to look for him, but I failed.";
-            dialogues[3] = "I am so worried about him.";
-            dialogues[4] = "Please bring him back if you find him.";
+            dialogues[0] =  "Mother: \n" +
+                            "Traveler, please help me! ";
+            dialogues[1] =  "Mother: \n" +
+                            "My son ran into the cave because I got mad at \nhim.";
+            dialogues[2] =  "Mother: \n" +
+                            "I tried to look for him, but I failed.";
+            dialogues[3] =  "Mother: \n" +
+                            "I am so worried about him.";
+            dialogues[4] =  "Mother: \n" +
+                            "Please bring him back if you find him.";
         }
         else if(conversationState == 1){
             dialogues[0] =  "Mother: \n" +

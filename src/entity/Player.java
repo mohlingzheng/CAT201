@@ -40,7 +40,7 @@ public class Player extends Entity{
 
         worldX = gp.tileSize * 25;
         worldY = gp.tileSize * 67;
-        speed = 8;
+        speed = 6;
         direction = "left";
 
         // PLAYER STATUS
@@ -237,6 +237,7 @@ public class Player extends Entity{
                             gp.ui.missionCount = 3;
                             break;
                     }
+                    gp.playSE(1);
                     stoneCount++;
                     gp.obj[i] = null;
                     break;

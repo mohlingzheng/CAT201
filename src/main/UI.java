@@ -43,6 +43,7 @@ public class UI {
 
     // Black Screen Effect
     BufferedImage blackScreen;
+    BufferedImage controlScreen;
 
     // Intro Ending Related
     BufferedImage introImage[] = new BufferedImage[6];
@@ -100,6 +101,7 @@ public class UI {
         // Maze Effect
         Entity black = new OBJ_BlackScreen(gp);
         blackScreen = black.image;
+        controlScreen = black.image2;
 
         storySetup();
         conversationSetup();
@@ -300,50 +302,18 @@ public class UI {
             }
 
         }
-//        else if(titleScreenState == 1){
-//
-//            // CLASS SELECTION SCREEN
-//            g2.setColor(Color.white);
-//            g2.setFont(g2.getFont().deriveFont(42F));
-//
-//            String text = "Select your class!";
-//            int x = getXforCenteredText(text);
-//            int y = gp.tileSize*3;
-//            g2.drawString(text, x, y);
-//
-//            text = "Fighter";
-//            x = getXforCenteredText(text);
-//            y += gp.tileSize*2;
-//            g2.drawString(text, x, y);
-//            if(commandNum == 0){
-//                g2.drawString(">", x-gp.tileSize, y);
-//            }
-//
-//            text = "Thief";
-//            x = getXforCenteredText(text);
-//            y += gp.tileSize;
-//            g2.drawString(text, x, y);
-//            if(commandNum == 1){
-//                g2.drawString(">", x-gp.tileSize, y);
-//            }
-//
-//            text = "Sorcerer";
-//            x = getXforCenteredText(text);
-//            y += gp.tileSize;
-//            g2.drawString(text, x, y);
-//            if(commandNum == 2){
-//                g2.drawString(">", x-gp.tileSize, y);
-//            }
-//
-//            text = "Back";
-//            x = getXforCenteredText(text);
-//            y += gp.tileSize*2;
-//            g2.drawString(text, x, y);
-//            if(commandNum == 3){
-//                g2.drawString(">", x-gp.tileSize, y);
-//            }
-//        }
+        else if(titleScreenState == 1){
+            int x = 0;
+            int y = 0;
+            int width = gp.screenWidth;
+            int height = gp.screenHeight;
+            g2.drawImage(controlScreen, x, y, width, height, null);
 
+            g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20F));
+            g2.setColor(Color.white);
+            String words = "Press Enter Key to Start The Game...";
+            g2.drawString(words, gp.tileSize * 8, gp.tileSize * 11 + 35);
+        }
 
     }
 
@@ -603,9 +573,9 @@ public class UI {
 
         endingMessage[0][0] =
                 "The monster was defeated, and the kingdom was safe now. \n" +
-                "The whole kingdom was very happy. In order to express \n" +
-                "the gratitude toward Trevor, the king used the Power \n" +
-                "Stone to open the portal. ";
+                "The whole kingdom was very happy. In order to express the \n" +
+                "gratitude toward Trevor, the king used the Power Stone to \n" +
+                "open the portal. ";
 
         endingMessage[1][0] =
                 "Through the portal, he traversed back to his world. It was \n" +
@@ -615,8 +585,8 @@ public class UI {
         endingMessage[2][0] =
                 "On the way back home, he saw his parents are shouting his \n" +
                 "name and looking for him anxiously. He realized his parents \n" +
-                "care for him. He felt guilty for not treating his parents \n" +
-                "well and blessed to have such wonderful parents. ";
+                "care for him. He felt guilty for not treating his parents well \n" +
+                "and blessed to have such wonderful parents. ";
 
         endingMessage[3][0] =
                 "Without a second of hesitation, he ran towards them. It was \n" +
@@ -625,8 +595,7 @@ public class UI {
         endingMessage[4][0] =
                 "He apologized to his parents for running off without telling \n" +
                 "anyone, and for his stubbornness along these years. His \n" +
-                "parents also apologized to him for not listening to his \n" +
-                "thought.";
+                "parents also apologized to him for not listening to his thought.";
 
         endingMessage[5][0] =
                 "They smiled happily and go back home together.";
@@ -645,8 +614,8 @@ public class UI {
         introConversation[3] =  "Trevor:\n" +
                                 "I… err… I am Trevor.";
         introConversation[4] =  "King:\n" +
-                                "Surprised not, Trevor. You are here because \n" +
-                                "of the Power Stone.";
+                                "Surprised not, Trevor. You are here because of \n" +
+                                "the Power Stone.";
         introConversation[5] =  "Trevor:\n" +
                                 "Power Stone?";
         introConversation[6] =  "King:\n" +
@@ -654,39 +623,38 @@ public class UI {
                                 "dragon. Thanks to Power Stone, we were able \n" +
                                 "to fight back the demon dragon. ";
         introConversation[7] =  "King:\n" +
-                                "The dragon fled away but there’s no \n" +
-                                "guarantee that it won’t come back. \n" +
-                                "Unfortunately, it broke into piece and \n" +
-                                "spread around our kingdom.";
+                                "The dragon fled away but there’s no guarantee \n" +
+                                "that it won’t come back. Unfortunately, it \n" +
+                                "broke into piece and spread around our kingdom.";
         introConversation[8] =  "Trevor:\n" +
                                 "What does it have to do with me?";
         introConversation[9] =  "King:\n" +
-                                "Power Stone was able to open portal \n" +
-                                "that can connect to another world. ";
+                                "Power Stone was able to open portal that can \n" +
+                                "connect to another world.";
         introConversation[10] = "King:\n" +
-                                "The portal must have been opened during \n" +
-                                "the splitting of the Power Stone and you \n" +
-                                "accidentally entered the portal. That is \n" +
-                                "why and how you are here.";
+                                "The portal must have been opened during the \n" +
+                                "splitting of the Power Stone and you accidentally \n" +
+                                "entered the portal. That is why and how you are \n" +
+                                "here.";
         introConversation[11] = "Trevor:\n" +
                                 "Is there a way to go back to my world?";
         introConversation[12] = "King:\n" +
-                                "By using Power Stone, you can open the \n" +
-                                "portal again and go back to your world. ";
+                                "By using Power Stone, you can open the portal \n" +
+                                "again and go back to your world. ";
         introConversation[13] = "King:\n" +
-                                "We would like to retrieve the pieces of \n" +
-                                "Power Stone but we can’t leave our kingdom \n" +
-                                "because we need to make sure the kingdom is \n" +
-                                "safe from the monsters. ";
+                                "We would like to retrieve the pieces of Power \n" +
+                                "Stone but we can’t leave our kingdom because \n" +
+                                "we need to make sure the kingdom is safe from \n" +
+                                "the monsters.";
         introConversation[14] = "King:\n" +
                                 "So, I will leave the task to you, young man.";
         introConversation[15] = "Trevor:\n" +
                                 "Do you know where the pieces of the Power \n" +
                                 "Stone fall?";
         introConversation[16] = "King:\n" +
-                                "One is in the North Cave. Another one is in \n" +
-                                "the East Forest and the last one is in the \n" +
-                                "South Maze. ";
+                                "One is in the North Cave. Another one is in the \n" +
+                                "East Forest and the last one is in the South \n" +
+                                "Maze.";
         introConversation[17] = "King:\n" +
                                 "Retrieve the Power Stone so our kingdom is \n" +
                                 "safe again and you can go back to your world.";
@@ -694,8 +662,8 @@ public class UI {
                                 "I will try my best…";
 
         endingConversation[0] =     "Trevor:\n" +
-                                    "King. I have found all the pieces of the \n" +
-                                    "Power Stone.";
+                                    "King. I have found all the pieces of the Power \n" +
+                                    "Stone.";
 
         endingConversation[1] =     "King\n" +
                                     "Great job, young man. Now my kingdom is \n" +
@@ -708,20 +676,19 @@ public class UI {
                                     "What’s happening?";
 
         endingConversation[4] =     "King:\n" +
-                                    "Oh no. The evil monster has come back. \n" +
-                                    "Quickly Trevor, use the Power Stone to \n" +
-                                    "defeat the monster.";
+                                    "Oh no. The evil monster has come back. Quickly \n" +
+                                    "Trevor, use the Power Stone to defeat the \n" +
+                                    "monster.";
 
-        endingConversation[5] =     "As Trevor holds the Power Stone up, the \n" +
-                                    "stone emits a bright energy from within. \n" +
-                                    "The energy power strikes the monster. ";
+        endingConversation[5] =     "As Trevor holds the Power Stone up, the stone \n" +
+                                    "emits a bright energy from within. The energy \n" +
+                                    "power strikes the monster. ";
 
         endingConversation[6] =     "Monster:\n" +
                                     "Er!!!";
 
-        endingConversation[7] =     "The monster could not stand against the \n" +
-                                    "strong power from the stone. It shatters \n" +
-                                    "and died.";
+        endingConversation[7] =     "The monster could not stand against the strong \n" +
+                                    "power from the stone. It shatters and died.";
 
         endingConversation[8] =     "Trevor:\n" +
                                     "We did it!";
@@ -735,8 +702,8 @@ public class UI {
                                     "Is this the portal to back to my world?";
 
         endingConversation[12] =    "King:\n" +
-                                    "Yes, it is. Thank you, young man. You saved \n" +
-                                    "us all. We appreciate your kindness. ";
+                                    "Yes, it is. Thank you, young man. You saved us \n" +
+                                    "all. We appreciate your kindness. ";
 
         endingConversation[13] =    "Trevor:\n" +
                                     "It would be my honor. ";
@@ -744,8 +711,8 @@ public class UI {
         endingConversation[13] =    "Villagers:\n" +
                                     "Thank you, Trevor… Goodbye!";
 
-        endingConversation[13] =    "Learnt a lot, Trevor entered the portal, \n" +
-                                    "back to the real world.";
+        endingConversation[13] =    "Learnt a lot, Trevor entered the portal, back \n" +
+                                    "to the real world.";
 
     }
 
@@ -768,6 +735,7 @@ public class UI {
         }
 
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20F));
+        g2.setColor(Color.gray);
         String words = "Press Enter Key to Continue...";
         g2.drawString(words, gp.tileSize * 9, gp.tileSize * 11 + 35);
 
