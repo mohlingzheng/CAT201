@@ -266,7 +266,7 @@ public class UI {
 
             // TITLE NAME
             g2.setFont(g2.getFont().deriveFont(Font.BOLD, 76F));
-            String text = "Trevor Transversed";
+            String text = "Traversed";
             int x = getXforCenteredText(text);
             int y = gp.tileSize*3;
 

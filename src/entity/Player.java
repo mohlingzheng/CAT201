@@ -40,7 +40,7 @@ public class Player extends Entity{
 
         worldX = gp.tileSize * 25;
         worldY = gp.tileSize * 67;
-        speed = 6;
+        speed = 10;
         direction = "left";
 
         // PLAYER STATUS
@@ -220,6 +220,7 @@ public class Player extends Entity{
                             gp.ui.missionCount = 1;
                             gp.obj[i] = null;
                             gp.npc[5].conversationState = 2;
+                            gp.obj[13] = null;
                             break;
                         // Get second stone
                         case 10:
@@ -403,10 +404,10 @@ public class Player extends Entity{
         g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 
         // SHOW COLLISION RECTANGLE
-        g2.setColor(Color.red);
-        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
-
-        g2.drawRect(gp.tileSize*68, gp.tileSize*83, gp.tileSize, gp.tileSize);
+//        g2.setColor(Color.red);
+//        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+//
+//        g2.drawRect(gp.tileSize*68, gp.tileSize*83, gp.tileSize, gp.tileSize);
 
 
     }
