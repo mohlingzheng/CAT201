@@ -4,13 +4,25 @@ import main.GamePanel;
 
 public class NPC_Villager extends Entity{
 
-    public NPC_Villager(GamePanel gp){
+    public NPC_Villager(GamePanel gp, int t){
         super(gp);
         type = 5;
         direction = "down";
         speed = 1;
 
-        getCharacterImage("npc/oldman", "oldman", 2);
+        if(t == 1){
+            getCharacterImage("npc/oldman", "oldman", 2);
+        }
+        else if(t == 2){
+            getCharacterImage("npc/villager", "villager", 2);
+        }
+        else if(t == 3){
+            getCharacterImage("npc/villager2", "villager", 2);
+        }
+        else if(t == 4){
+            getCharacterImage("npc/oldman", "oldman", 2);
+        }
+
         setDialogue();
     }
 

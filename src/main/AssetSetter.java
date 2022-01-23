@@ -93,7 +93,6 @@ public class AssetSetter {
         gp.obj[13] = new OBJ_Tree(gp);
         gp.obj[13].worldX = gp.tileSize*64;
         gp.obj[13].worldY = gp.tileSize*66;
-        gp.obj[13].collision = false;
 
         gp.obj[14] = new OBJ_House(gp);
         gp.obj[14].worldX = gp.tileSize*31;
@@ -158,22 +157,22 @@ public class AssetSetter {
         gp.npc[0].worldY = gp.tileSize * 67;
         gp.npc[0].conversationState = 0;
 
-        gp.npc[1] = new NPC_Villager(gp);
+        gp.npc[1] = new NPC_Villager(gp, 1);
         gp.npc[1].worldX = gp.tileSize * 27;
         gp.npc[1].worldY = gp.tileSize * 75;
         gp.npc[1].conversationState = 1;
 
-        gp.npc[2] = new NPC_Villager(gp);
+        gp.npc[2] = new NPC_Villager(gp, 2);
         gp.npc[2].worldX = gp.tileSize * 24;
         gp.npc[2].worldY = gp.tileSize * 74;
         gp.npc[2].conversationState = 2;
 
-        gp.npc[3] = new NPC_Villager(gp);
+        gp.npc[3] = new NPC_Villager(gp, 3);
         gp.npc[3].worldX = gp.tileSize * 32;
         gp.npc[3].worldY = gp.tileSize * 74;
         gp.npc[3].conversationState = 3;
 
-        gp.npc[4] = new NPC_Villager(gp);
+        gp.npc[4] = new NPC_Villager(gp, 4);
         gp.npc[4].worldX = gp.tileSize * 31;
         gp.npc[4].worldY = gp.tileSize * 63;
         gp.npc[4].conversationState = 4;

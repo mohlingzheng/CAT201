@@ -48,8 +48,8 @@ public class OBJ_Tree extends Entity {
 
             g2.drawImage(image, screenX, screenY, imageWidth, imageHeight, null);
         }
-        g2.setColor(Color.red);
-        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
+//        g2.setColor(Color.red);
+//        g2.drawRect(screenX + solidArea.x, screenY + solidArea.y, solidArea.width, solidArea.height);
     }
 
 }
