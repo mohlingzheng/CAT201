@@ -30,7 +30,7 @@ public class TileManager {
     public void getTileImage(){
 
         // Tile for Maze
-        setup(0, "cave/cave", false);
+        setup(0, "cave/cave_stone", false);
         for (int i = 1; i < 21; i++){
             String name = "maze/" + String.valueOf(i);
             setup(i, name, true);

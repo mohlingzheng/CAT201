@@ -1,0 +1,84 @@
+<changelist name="Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]" date="1642923362279" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 1/23/2022 3:36 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/entity/NPC_Villager.class" />
+    <option name="AFTER_PATH" value="out/production/Game/entity/NPC_Villager.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/NPC_Villager.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="src/res/tile/maze/11.png" />
+    <option name="AFTER_PATH" value="src/res/tile/maze/11.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/entity/Player.class" />
+    <option name="AFTER_PATH" value="out/production/Game/entity/Player.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/Player.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager/villager_up_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_up_1.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/Game_jar/Game.jar" />
+    <option name="AFTER_PATH" value="out/artifacts/Game_jar/Game.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/Game.jar" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager/villager_right_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_right_1.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager2/villager_down_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_down_1.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager2/villager_up_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_up_11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager/villager_left_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_left_1.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager/villager_down_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_down_11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/main/AssetSetter.class" />
+    <option name="AFTER_PATH" value="out/production/Game/main/AssetSetter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/AssetSetter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/tile/maze/11.png" />
+    <option name="AFTER_PATH" value="out/production/Game/tile/maze/11.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/111.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/main/UI.class" />
+    <option name="AFTER_PATH" value="out/production/Game/main/UI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/UI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager2/villager_right_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_right_11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="src/res/npc/villager2/villager_left_1.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/villager_left_11.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Game/res/tile/maze/11.png" />
+    <option name="AFTER_PATH" value="out/production/Game/res/tile/maze/11.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_23_2022_3_36_PM_[Changes]/112.png" />
+  </binary>
+</changelist>

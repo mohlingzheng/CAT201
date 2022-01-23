@@ -109,15 +109,27 @@ public class KeyHandler implements KeyListener {
         // VIDEO STATE
         else if(gp.gameState == gp.videoState){
             if(gp.ui.introOrEnding == 1){
+                if(gp.musicOn == false){
+                    gp.musicOn = true;
+                    gp.playMusic(4);
+                }
                 if(code == KeyEvent.VK_ENTER){
                     gp.ui.sceneNum++;
                     if(gp.ui.sceneNum >= gp.ui.introImage.length){
+                        if(gp.musicOn == true){
+                            gp.musicOn = false;
+                            gp.stopMusic();
+                        }
                         gp.gameState = gp.talkState;
                         gp.ui.sceneNum = 0;
                     }
                 }
             }
             else if(gp.ui.introOrEnding == 2){
+                if(gp.musicOn == false){
+                    gp.musicOn = true;
+                    gp.playMusic(5);
+                }
                 if(gp.ui.fadeType == 3){
                     if(code == KeyEvent.VK_ENTER){
                         gp.ui.sceneNum++;
@@ -139,6 +151,10 @@ public class KeyHandler implements KeyListener {
         // TALK STATE
         else if(gp.gameState == gp.talkState){
             if(gp.npc[0].standStill == true && gp.ui.startConv == true){
+                if(gp.musicOn == false){
+                    gp.musicOn = true;
+                    gp.playMusic(0);
+                }
                 if(code == KeyEvent.VK_ENTER){
                     gp.ui.introConvNumber++;
                     if(gp.ui.introConvNumber >= gp.ui.introConversation.length){
@@ -150,6 +166,10 @@ public class KeyHandler implements KeyListener {
                 }
             }
             else if(gp.ui.fadeType == 3 && gp.npc[0].standStill == true){
+                if(gp.musicOn == true){
+                    gp.musicOn = false;
+                    gp.stopMusic();
+                }
                 if(code == KeyEvent.VK_ENTER){
                     gp.ui.endingConvNumber++;
                     if(gp.ui.endingConvNumber >= gp.ui.endingConversation.length){
