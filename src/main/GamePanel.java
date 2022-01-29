@@ -77,6 +77,9 @@ public class GamePanel extends JPanel implements Runnable{
     public final int mazeOutState = 6;
     public final int endingState = 7;
 
+    // BGM
+    public boolean musicOn = false;
+
     public GamePanel(){
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight)); // set the size
@@ -102,7 +105,6 @@ public class GamePanel extends JPanel implements Runnable{
 
         gameThread = new Thread(this);
         gameThread.start();
-        playMusic(0);
     }
 
     @Override

@@ -121,6 +121,10 @@ public class UI {
         }
         // PLAY STATE
         else if(gp.gameState == gp.playState){
+            if(gp.musicOn == false){
+                gp.musicOn = true;
+                gp.playMusic(0);
+            }
             drawMissionListWindow();
             drawCheckPointMessage();
             drawPlyaerLife();
