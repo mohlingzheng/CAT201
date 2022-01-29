@@ -118,6 +118,7 @@ public class AssetSetter {
         gp.obj[19] = new OBJ_Bridge(gp);
         gp.obj[19].worldX = gp.tileSize*53;
         gp.obj[19].worldY = gp.tileSize*78;
+        gp.obj[19].collision = true;
 
         // Skeleton in Maze
         gp.obj[20] = new OBJ_Skeleton(gp);

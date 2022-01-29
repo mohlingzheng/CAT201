@@ -53,6 +53,15 @@ public class KeyHandler implements KeyListener {
                     gp.gameState = gp.videoState;
                 }
             }
+            else if(gp.ui.titleScreenState == 2){
+                if(code == KeyEvent.VK_ENTER){
+                    gp.gameState = gp.titleState;
+
+                }
+                if(code == KeyEvent.VK_L){
+                    System.exit(0);
+                }
+            }
         }
 
         // PLAY STATE
@@ -74,9 +83,6 @@ public class KeyHandler implements KeyListener {
             }
             if(code == KeyEvent.VK_ENTER){
                 enterPressed = true;
-            }
-            if(code == KeyEvent.VK_C){
-                gp.player.stoneCount = 3;
             }
         }
         // PAUSE STATE
@@ -140,8 +146,8 @@ public class KeyHandler implements KeyListener {
                 }
                 else if(gp.ui.fadeType == 4){
                     if(code == KeyEvent.VK_ENTER){
+                        gp.ui.titleScreenState = 2;
                         gp.gameState = gp.titleState;
-                        System.exit(0);
                     }
                 }
             }

@@ -125,10 +125,10 @@ public class UI {
                 gp.musicOn = true;
                 gp.playMusic(0);
             }
+            drawDarkRegion();
             drawMissionListWindow();
             drawCheckPointMessage();
             drawPlyaerLife();
-            drawDarkRegion();
         }
         // PAUSE STATE
         else if(gp.gameState == gp.pauseState){
@@ -317,6 +317,27 @@ public class UI {
             g2.setColor(Color.white);
             String words = "Press Enter Key to Start The Game...";
             g2.drawString(words, gp.tileSize * 8, gp.tileSize * 11 + 35);
+        }
+
+        else if(titleScreenState == 2){
+            g2.setColor(Color.black);
+            g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+
+            String endgame = "Ended";
+
+            g2.setColor(Color.white);
+            g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 28F));
+            int length = (int)g2.getFontMetrics().getStringBounds(endgame, g2).getWidth();
+            int x = gp.screenWidth/2 - length/2;
+            int y = gp.screenHeight/2;
+            g2.drawString(endgame,x ,y);
+
+            g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 20F));
+            String anyKey = "Press L to leave the game";
+            length = (int)g2.getFontMetrics().getStringBounds(anyKey, g2).getWidth();
+            x = gp.screenWidth/2 - length/2;
+            y = gp.screenHeight/2 + gp.tileSize;
+            g2.drawString(anyKey,x ,y);
         }
 
     }
