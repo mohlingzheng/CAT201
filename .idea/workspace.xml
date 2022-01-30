@@ -1,90 +1,554 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CAT:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b28f94a4-0eeb-4b21-8ab4-3ddeeae12d57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Kid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Kid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_King.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_King.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Mother.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Mother.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_OBJ_Signboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_OBJ_Signboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Oldman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Oldman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Villager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Villager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/NPC_Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/AssetSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/AssetSetter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/CollisionChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/CollisionChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/EventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/EventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/GamePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/GamePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/GamePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/Sound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/Sound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/main/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/main/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/monster/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/monster/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/monster/Monster1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/monster/Monster1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/monster/Monster2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/monster/Monster2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Bridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Bridge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Castle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Castle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/decoration/OBJ_Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/obtainable/OBJ_PowerStone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/obtainable/OBJ_PowerStone.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/obtainable/OBJ_Skeleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/obtainable/OBJ_Skeleton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Bigmonster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Bigmonster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_BlackScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_BlackScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Boots.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Boots.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Chest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Chest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Heart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Heart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/others/OBJ_Key.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/story/OBJ_Ending.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/story/OBJ_Ending.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/object/story/OBJ_Intro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/object/story/OBJ_Intro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/res/sound/BlueBoyAdventure.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/sound/BlueBoyAdventure.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/TileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CAT/tile/TileManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/cave.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/earth_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/earth_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/earth_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/earth_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/fence_earth_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/fence_earth_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/fence_grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/fence_grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/fence_grass_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/grass_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/sand.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/side_grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/side_grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/side_grass_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree_earth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree_grass.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree_grass_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree_grass_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/tree_grass_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/wall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CAT/tile/water_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Game_jar/Game.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/ending/ending_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/font/timesbd.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/introduction/intro_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/maps/MapsV01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/maps/map01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/maps/map02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/maps/world01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/bullet/bullet_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/bullet/bullet_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/bullet/bullet_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/bullet/bullet_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster1/monster_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster2/static_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster2/static_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster2/static_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster2/static_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/monster/monster_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/kid/kid_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/kid/kid_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/kid/kid_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/kid/kid_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king/king_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/king_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/mother/mother_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/mother/mother_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/mother/mother_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/mother/mother_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman/oldman_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/oldman_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager/villager_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager2/villager_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager2/villager_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager2/villager_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/villager2/villager_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/worker/worker_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/worker/worker_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/worker/worker_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/npc/worker/worker_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/bigmonster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/blackscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/bridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/control.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/door.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/heart_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/heart_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/heart_half.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/house.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/letter/letter_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/powerstone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/powerstone_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/springbed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/tree123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/xbridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/object/xtree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/door.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/heart_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/heart_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/heart_half.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/objects/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/boy_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/player/player_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/ending/ending_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/font/timesbd.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/introduction/intro_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/maps/MapsV01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/maps/map01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/maps/map02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/maps/world01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/bullet/bullet_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/bullet/bullet_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/bullet/bullet_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/bullet/bullet_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster1/monster_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster2/static_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster2/static_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster2/static_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster2/static_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/monster/monster_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/kid/kid_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/kid/kid_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/kid/kid_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/kid/kid_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king/king_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/king_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/mother/mother_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/mother/mother_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/mother/mother_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/mother/mother_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman/oldman_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/oldman_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager/villager_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager2/villager_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager2/villager_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager2/villager_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/villager2/villager_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/worker/worker_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/worker/worker_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/worker/worker_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/npc/worker/worker_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/bigmonster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/blackscreen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/bridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/castle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/control.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/door.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/heart_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/heart_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/heart_half.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/house.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/letter/letter_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/powerstone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/powerstone_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/springbed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/tree123.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/xbridge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/object/xtree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/boots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/chest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/door.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/heart_blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/heart_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/heart_half.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/objects/key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/boy_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_down_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_left_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_left_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_right_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_right_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/player/player_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/BlueBoyAdventure.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/bgm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/collect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/door.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/explosion.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/fanfare.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/powerup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sound/unlock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sounds/BlueBoyAdventure.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sounds/fanfare.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sounds/powerup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/sounds/unlock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/textfile/MapsV01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/textfile/Monster1Location.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/textfile/Monster2Location.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave_stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave_tiles_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave_tiles_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave_tiles_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/cave_tiles_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/earth_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/cave/earth_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/earth_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/earth_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/earth_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/fence_earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/fence_earth_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/fence_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/fence_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/fence_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/forest/forest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/forest/forest_tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/forest/forest_tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/forest/forest_tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/maze/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_grass_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_side_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_side_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_side_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/earth_side_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/fence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/fence_side_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/fence_side_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/flower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/forest_tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/forest_tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/forest_tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/tree_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/normal/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/side_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/side_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/side_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree_earth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree_grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/tree_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/res/tile/water_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/BlueBoyAdventure.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/bgm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/collect.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/door.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/explosion.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/fanfare.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/powerup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sound/unlock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sounds/BlueBoyAdventure.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sounds/coin.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sounds/fanfare.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sounds/powerup.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/sounds/unlock.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/textfile/MapsV01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/textfile/Monster1Location.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/textfile/Monster2Location.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave_stone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave_tiles_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave_tiles_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave_tiles_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/cave_tiles_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/earth_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/cave/earth_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/earth_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/earth_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/earth_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/fence_earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/fence_earth_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/fence_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/fence_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/fence_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/forest/forest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/forest/forest_tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/forest/forest_tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/forest/forest_tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/maze/9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_grass_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_side_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_side_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_side_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/earth_side_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/fence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/fence_side_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/fence_side_right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/flower.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/forest_tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/forest_tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/forest_tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/tree_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/tree_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/tree_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/tree_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/normal/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/sand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/side_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/side_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/side_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree_earth.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree_grass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree_grass_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree_grass_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/tree_grass_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/wall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/tile/water_9.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +573,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
@@ -137,7 +601,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4d8d484c-750f-4cf1-a802-e42c635de31a" name="Changes" comment="" />
+      <changelist id="b28f94a4-0eeb-4b21-8ab4-3ddeeae12d57" name="Changes" comment="" />
       <created>1641614086735</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
